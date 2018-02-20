@@ -1,0 +1,164 @@
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe.config
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe.manifest
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.application
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.pdb
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.xml
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\Interop.AcroPDFLib.dll
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\AxInterop.AcroPDFLib.dll
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.AcroPDFLib.dll
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.ADODB.dll
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\AxInterop.AcroPDFLib.dll
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.ResolveComReference.cache
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgSelReportAccount.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgShowTempReceipts.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgReportPeriod.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgDtpDialog.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgSortCol.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgTenantIDCard.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBalanceSheet.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmTxnDrill.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalSpecialTxnsCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowFlatDetails.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBankReconcileCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalBankStatementCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePaymentCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalSpecialTxns.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePOA.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmSearchFlat.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAddEditTenant.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageTenant.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAddEditServiceCase.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageServiceCase.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmViewReceiptCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookReceiptCultural.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageSysParams.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageVoucherBook.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmEVoteMailer.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageInventory.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMiscCharting.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageChequeBook.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageReceiptBook.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCharting.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMailPreview.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBillMailer.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalBankStatement.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBankReconcile.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookOtherCharge.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowTxnForFlat.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmRcptReconDtl.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmViewReceipt.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCOAReport.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmParking.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmDBBackup.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageRole.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAccessManager.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmChequeDetails.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePayment.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookPenalty.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmSaveViewItemData.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowReceipt.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowBill.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookReceipt.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageFlats.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmPerformBilling.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageFlatAndOwnerDetails.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCOA.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmChangePWD.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmLogin.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMain.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageMaintBillReceipts.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmGeneratePassword.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageJournal.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.Resources.resources
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.GenerateResource.Cache
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.CoreCompileInputs.cache
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.TrustInfo.xml
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.exe.manifest
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.application
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.exe
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.xml
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.pdb
+D:\VSE\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbprojResolveAssemblyReference.cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe.config
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe.manifest
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.application
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.exe
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.pdb
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.xml
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\Interop.AcroPDFLib.dll
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\AxInterop.AcroPDFLib.dll
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbprojResolveAssemblyReference.cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.AcroPDFLib.dll
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.ADODB.dll
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\AxInterop.AcroPDFLib.dll
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.ResolveComReference.cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgSelReportAccount.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgShowTempReceipts.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgReportPeriod.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgDtpDialog.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgSortCol.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.dlgTenantIDCard.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBalanceSheet.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmTxnDrill.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalSpecialTxnsCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowFlatDetails.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBankReconcileCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalBankStatementCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePaymentCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalSpecialTxns.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePOA.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmSearchFlat.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAddEditTenant.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageTenant.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAddEditServiceCase.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageServiceCase.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmViewReceiptCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookReceiptCultural.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageSysParams.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageVoucherBook.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmEVoteMailer.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageInventory.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMiscCharting.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageChequeBook.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageReceiptBook.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCharting.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMailPreview.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBillMailer.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmJournalBankStatement.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBankReconcile.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookOtherCharge.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowTxnForFlat.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmRcptReconDtl.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmViewReceipt.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCOAReport.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmParking.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmDBBackup.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageRole.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmAccessManager.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmChequeDetails.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManagePayment.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookPenalty.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmSaveViewItemData.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowReceipt.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmShowBill.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmBookReceipt.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageFlats.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmPerformBilling.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageFlatAndOwnerDetails.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCOA.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmChangePWD.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmLogin.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmMain.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageMaintBillReceipts.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmGeneratePassword.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmManageJournal.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.Resources.resources
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.GenerateResource.Cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbproj.CoreCompileInputs.cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.TrustInfo.xml
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.exe.manifest
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.application
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.exe
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.xml
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.pdb

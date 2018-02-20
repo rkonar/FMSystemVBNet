@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0047EF71-69DE-4F14-BEDD-AAC52F2CCD67}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FMSystem.My.MyApplication</StartupObject>
+    <RootNamespace>FMSystem</RootNamespace>
+    <AssemblyName>FMSystemProject</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\MY CODES\FMSystemProject\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>FM System</ProductName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FMSystemProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FMSystemProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>512D168E81603662D562972C055579A392E2639B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FMSystemProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>FMSystemProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>FMSystemProject.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\clsAuditReports.vb" />
+    <Compile Include="Class\clsBackupRestore.vb" />
+    <Compile Include="Class\clsFinYear.vb" />
+    <Compile Include="Class\clsDocRef.vb" />
+    <Compile Include="Class\clsFlat.vb" />
+    <Compile Include="Class\clsJournal.vb" />
+    <Compile Include="Class\clsJournal_Cult.vb" />
+    <Compile Include="Class\clsReceipt.vb" />
+    <Compile Include="Class\clsReceipt_Cult.vb" />
+    <Compile Include="Class\clsReport.vb" />
+    <Compile Include="Class\clsReport_Cult.vb" />
+    <Compile Include="Class\clsSecurity.vb" />
+    <Compile Include="Class\clsSendMail.vb" />
+    <Compile Include="Class\clsSendSMS.vb" />
+    <Compile Include="Class\clsSendSMS_Cult.vb" />
+    <Compile Include="Class\clsSysParam.vb" />
+    <Compile Include="Class\clsWebCam.vb" />
+    <Compile Include="Class\clsAuditReportsCultural.vb" />
+    <Compile Include="Dialogs\dlgSelReportAccount.Designer.vb">
+      <DependentUpon>dlgSelReportAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgSelReportAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgSortCol.Designer.vb">
+      <DependentUpon>dlgSortCol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgSortCol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgShowTempReceipts.Designer.vb">
+      <DependentUpon>dlgShowTempReceipts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgShowTempReceipts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgReportPeriod.Designer.vb">
+      <DependentUpon>dlgReportPeriod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgReportPeriod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgDtpDate.Designer.vb">
+      <DependentUpon>dlgDtpDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgDtpDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\dlgTenantIDCard.Designer.vb">
+      <DependentUpon>dlgTenantIDCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\dlgTenantIDCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBalanceSheet.Designer.vb">
+      <DependentUpon>frmBalanceSheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBalanceSheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTxnDrill.Designer.vb">
+      <DependentUpon>frmTxnDrill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTxnDrill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmJournalSpecialTxnsCultural.Designer.vb">
+      <DependentUpon>frmJournalSpecialTxnsCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmJournalSpecialTxnsCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmShowFlatDetails.Designer.vb">
+      <DependentUpon>frmShowFlatDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmShowFlatDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBankReconcileCultural.Designer.vb">
+      <DependentUpon>frmBankReconcileCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBankReconcileCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmJournalBankStatementCultural.Designer.vb">
+      <DependentUpon>frmJournalBankStatementCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmJournalBankStatementCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManagePaymentCultural.Designer.vb">
+      <DependentUpon>frmManagePaymentCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManagePaymentCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmJournalSpecialTxns.Designer.vb">
+      <DependentUpon>frmJournalSpecialTxns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmJournalSpecialTxns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManagePOA.Designer.vb">
+      <DependentUpon>frmManagePOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManagePOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmSearchFlat.Designer.vb">
+      <DependentUpon>frmSearchFlat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmSearchFlat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmAddEditTenant.Designer.vb">
+      <DependentUpon>frmAddEditTenant.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmAddEditTenant.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageTenant.Designer.vb">
+      <DependentUpon>frmManageTenant.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageTenant.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseMgmt\frmAddEditServiceCase.Designer.vb">
+      <DependentUpon>frmAddEditServiceCase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CaseMgmt\frmAddEditServiceCase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaseMgmt\frmManageServiceCase.Designer.vb">
+      <DependentUpon>frmManageServiceCase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CaseMgmt\frmManageServiceCase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmViewReceiptCultural.Designer.vb">
+      <DependentUpon>frmViewReceiptCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmViewReceiptCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookReceiptCultural.Designer.vb">
+      <DependentUpon>frmBookReceiptCultural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookReceiptCultural.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmManageSysParams.designer.vb">
+      <DependentUpon>frmManageSysParams.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmManageSysParams.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmManageVoucherBook.Designer.vb">
+      <DependentUpon>frmManageVoucherBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmManageVoucherBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\tmp\frmEVoteMailer.Designer.vb">
+      <DependentUpon>frmEVoteMailer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\tmp\frmEVoteMailer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Misc\frmManageInventory.Designer.vb">
+      <DependentUpon>frmManageInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Misc\frmManageInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmMiscCharting.Designer.vb">
+      <DependentUpon>frmMiscCharting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Report\frmMiscCharting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmManageChequeBook.Designer.vb">
+      <DependentUpon>frmManageChequeBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmManageChequeBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmManageReceiptBook.Designer.vb">
+      <DependentUpon>frmManageReceiptBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmManageReceiptBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmCharting.Designer.vb">
+      <DependentUpon>frmCharting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Report\frmCharting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmMailPreview.Designer.vb">
+      <DependentUpon>frmMailPreview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmMailPreview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Misc\frmBillMailer.Designer.vb">
+      <DependentUpon>frmBillMailer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Misc\frmBillMailer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmJournalBankStatement.Designer.vb">
+      <DependentUpon>frmJournalBankStatement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmJournalBankStatement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBankReconcile.Designer.vb">
+      <DependentUpon>frmBankReconcile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBankReconcile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookOtherCharge.Designer.vb">
+      <DependentUpon>frmBookOtherCharge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookOtherCharge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmShowTxnForFlat.Designer.vb">
+      <DependentUpon>frmShowTxnForFlat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmShowTxnForFlat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmRcptReconDtl.Designer.vb">
+      <DependentUpon>frmRcptReconDtl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmRcptReconDtl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmViewReceipt.Designer.vb">
+      <DependentUpon>frmViewReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmViewReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmCOAReport.Designer.vb">
+      <DependentUpon>frmCOAReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Report\frmCOAReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmParking.Designer.vb">
+      <DependentUpon>frmParking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmParking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmDBBackup.Designer.vb">
+      <DependentUpon>frmDBBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmDBBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmManageRole.Designer.vb">
+      <DependentUpon>frmManageRole.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmManageRole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmAccessManager.Designer.vb">
+      <DependentUpon>frmAccessManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmAccessManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChequeDetails.Designer.vb">
+      <DependentUpon>frmChequeDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChequeDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManagePayment.Designer.vb">
+      <DependentUpon>frmManagePayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManagePayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookPenalty.Designer.vb">
+      <DependentUpon>frmBookPenalty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookPenalty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSaveViewItemData.Designer.vb">
+      <DependentUpon>frmSaveViewItemData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSaveViewItemData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmShowReceipt.Designer.vb">
+      <DependentUpon>frmShowReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmShowReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmShowBill.Designer.vb">
+      <DependentUpon>frmShowBill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmShowBill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookReceipt.Designer.vb">
+      <DependentUpon>frmBookReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Receipt\frmBookReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageFlats.Designer.vb">
+      <DependentUpon>frmManageFlats.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageFlats.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmPerformBilling.Designer.vb">
+      <DependentUpon>frmPerformBilling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmPerformBilling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageFlatAndOwnerDetails.Designer.vb">
+      <DependentUpon>frmManageFlatAndOwnerDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Flat\frmManageFlatAndOwnerDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmCOA.Designer.vb">
+      <DependentUpon>frmCOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmCOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmChangePWD.Designer.vb">
+      <DependentUpon>frmChangePWD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmChangePWD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManageMaintBillReceipts.Designer.vb">
+      <DependentUpon>frmManageMaintBillReceipts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManageMaintBillReceipts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\frmGeneratePassword.Designer.vb">
+      <DependentUpon>frmGeneratePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\frmGeneratePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManageJournal.Designer.vb">
+      <DependentUpon>frmManageJournal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManageJournal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\modCommonFunctions.vb" />
+    <Compile Include="Modules\modDbfunctions.vb" />
+    <Compile Include="Modules\modGlobalDeclarations.vb" />
+    <Compile Include="Modules\modBill.vb" />
+    <Compile Include="Modules\modUtils.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\dlgSelReportAccount.resx">
+      <DependentUpon>dlgSelReportAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgShowTempReceipts.resx">
+      <DependentUpon>dlgShowTempReceipts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgReportPeriod.resx">
+      <DependentUpon>dlgReportPeriod.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgDtpDate.resx">
+      <DependentUpon>dlgDtpDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgSortCol.resx">
+      <DependentUpon>dlgSortCol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\dlgTenantIDCard.resx">
+      <DependentUpon>dlgTenantIDCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBalanceSheet.resx">
+      <DependentUpon>frmBalanceSheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTxnDrill.resx">
+      <DependentUpon>frmTxnDrill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmJournalSpecialTxnsCultural.resx">
+      <DependentUpon>frmJournalSpecialTxnsCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmShowFlatDetails.resx">
+      <DependentUpon>frmShowFlatDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBankReconcileCultural.resx">
+      <DependentUpon>frmBankReconcileCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmJournalBankStatementCultural.resx">
+      <DependentUpon>frmJournalBankStatementCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManagePaymentCultural.resx">
+      <DependentUpon>frmManagePaymentCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmJournalSpecialTxns.resx">
+      <DependentUpon>frmJournalSpecialTxns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmManagePOA.resx">
+      <DependentUpon>frmManagePOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmSearchFlat.resx">
+      <DependentUpon>frmSearchFlat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmAddEditTenant.resx">
+      <DependentUpon>frmAddEditTenant.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmManageTenant.resx">
+      <DependentUpon>frmManageTenant.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseMgmt\frmAddEditServiceCase.resx">
+      <DependentUpon>frmAddEditServiceCase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaseMgmt\frmManageServiceCase.resx">
+      <DependentUpon>frmManageServiceCase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmViewReceiptCultural.resx">
+      <DependentUpon>frmViewReceiptCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmBookReceiptCultural.resx">
+      <DependentUpon>frmBookReceiptCultural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmManageSysParams.resx">
+      <DependentUpon>frmManageSysParams.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmManageVoucherBook.resx">
+      <DependentUpon>frmManageVoucherBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\tmp\frmEVoteMailer.resx">
+      <DependentUpon>frmEVoteMailer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Misc\frmManageInventory.resx">
+      <DependentUpon>frmManageInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmMiscCharting.resx">
+      <DependentUpon>frmMiscCharting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmManageChequeBook.resx">
+      <DependentUpon>frmManageChequeBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmManageReceiptBook.resx">
+      <DependentUpon>frmManageReceiptBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmCharting.resx">
+      <DependentUpon>frmCharting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmMailPreview.resx">
+      <DependentUpon>frmMailPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Misc\frmBillMailer.resx">
+      <DependentUpon>frmBillMailer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmJournalBankStatement.resx">
+      <DependentUpon>frmJournalBankStatement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBankReconcile.resx">
+      <DependentUpon>frmBankReconcile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmBookOtherCharge.resx">
+      <DependentUpon>frmBookOtherCharge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmShowTxnForFlat.resx">
+      <DependentUpon>frmShowTxnForFlat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmRcptReconDtl.resx">
+      <DependentUpon>frmRcptReconDtl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmViewReceipt.resx">
+      <DependentUpon>frmViewReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmCOAReport.resx">
+      <DependentUpon>frmCOAReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmParking.resx">
+      <DependentUpon>frmParking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmDBBackup.resx">
+      <DependentUpon>frmDBBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmManageRole.resx">
+      <DependentUpon>frmManageRole.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmAccessManager.resx">
+      <DependentUpon>frmAccessManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChequeDetails.resx">
+      <DependentUpon>frmChequeDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManagePayment.resx">
+      <DependentUpon>frmManagePayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmBookPenalty.resx">
+      <DependentUpon>frmBookPenalty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSaveViewItemData.resx">
+      <DependentUpon>frmSaveViewItemData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmShowReceipt.resx">
+      <DependentUpon>frmShowReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmShowBill.resx">
+      <DependentUpon>frmShowBill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Receipt\frmBookReceipt.resx">
+      <DependentUpon>frmBookReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmManageFlats.resx">
+      <DependentUpon>frmManageFlats.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmPerformBilling.resx">
+      <DependentUpon>frmPerformBilling.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Flat\frmManageFlatAndOwnerDetails.resx">
+      <DependentUpon>frmManageFlatAndOwnerDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmCOA.resx">
+      <DependentUpon>frmCOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmChangePWD.resx">
+      <DependentUpon>frmChangePWD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManageMaintBillReceipts.resx">
+      <DependentUpon>frmManageMaintBillReceipts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\frmGeneratePassword.resx">
+      <DependentUpon>frmGeneratePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManageJournal.resx">
+      <DependentUpon>frmManageJournal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FMSystemProject_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
