@@ -39,6 +39,21 @@
 
         releaseObject(actRS1)
     End Function
+    Public Function getTaxRefund(stDt As Long, enDt As Long) As Double
+        Dim actRS1 As ADODB.Recordset, retStr As String = ""
+        getTaxRefund = 0
+
+        ssql = "select sum(CrAmount) as sumamt from tbljournal where Status is null and AccountNo='TAX-TDS'"
+        ssql = ssql & " and TxnDate <= " & enDt
+        ssql = ssql & " and TxnDate >= " & stDt
+        ssql = ssql & " and TxnType = 'TAX-REFUND'"
+
+        actRS1 = gcon.Execute(ssql)
+        getTaxRefund = IIf(DBNull.Value.Equals(actRS1.Fields(0).Value), 0, actRS1.Fields(0).Value.ToString)
+        actRS1.Close()
+
+        releaseObject(actRS1)
+    End Function
     Public Function getTermDepositCreated(stDt As Long, enDt As Long, txnType As String) As Double
         Dim actRS1 As ADODB.Recordset, retStr As String = ""
         getTermDepositCreated = 0
@@ -137,7 +152,7 @@
 
         Dim LiabTotal As Double, AssetTotal As Double
         Dim curStartDate As Long, curEndDate As Long, PrevStartDate As Long, PrevEndDate As Long
-        Dim pv As Double = 0, pv2 As Double = 0, cv As Double = 0, an As String, sr As Integer, cvA As Double, cvP As Double, cv2 As Double
+        Dim pv As Double = 0, pv2 As Double = 0, cv As Double = 0, an As String, sr As Integer, cvA As Double, cvP As Double, cv2 As Double, cv3 As Double
 
         '=========================================
         dlgDtpDialog.ShowDialog()
@@ -291,8 +306,11 @@
         pv2 = getAccountBalanceAsOfDate(PrevEndDate, an, "NET")
         cv2 = getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
 
+        'an = "TAX-REFUND"
+        'cv3 = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
 
-        LiabTotal = LiabTotal + pv - pv2 + cv - cv2
+
+        LiabTotal = LiabTotal + pv - pv2 + cv - cv2 '+ cv3
 
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Value = "Provision For Taxation"
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Font.Bold = FontStyle.Bold
@@ -304,21 +322,27 @@
         DrawUnderline(templateSht, COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 2), Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin)
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 4)).Value = "   Less:Self Assessment Tax Paid This year"
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 4)).Value = cv2
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr + 4)).Value = pv - pv2 + cv - cv2
+
+        'templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 5)).Value = "   Add:Refund received from Income Tax Dept."
+        'templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 5)).Value = cv3
+
+        templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr + 4)).Value = pv - pv2 + cv - cv2 '+ cv3
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr + 4)).Font.Bold = FontStyle.Bold
         sr = sr + 5
+
 
         'Provision For Expenses
         an = "PROVISION-FOR-EXPENSE"
         cv = (-1) * getAccountBalanceAsOfDate(curEndDate, an, "NET")
-        LiabTotal = LiabTotal + cv
+        If cv > 0 Then
+            LiabTotal = LiabTotal + cv
 
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Value = "Provision for Expenses"
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Font.Bold = FontStyle.Bold
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr)).Value = cv
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr)).Font.Bold = FontStyle.Bold
-        sr = sr + 1
-
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Value = "Provision for Expenses"
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Font.Bold = FontStyle.Bold
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr)).Value = cv
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT2 & (ROW_BSTEMPLATE_DATA_START + sr)).Font.Bold = FontStyle.Bold
+            sr = sr + 1
+        End If
         'Provision For Audit
         an = "PROVISION-FOR-AUDIT-FEE"
         cv = (-1) * getAccountBalanceAsOfDate(curEndDate, an, "NET")
@@ -795,7 +819,9 @@ errH:
 
         'Misc Collection
         an = "REV-MISC"
-        cv = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
+        cv = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET", " and TxnType <> 'VODAFONE-TAX-ADJUSTMENT'")
+        'VODAFONE-TAX-ADJUSTMENT : This is excluded as the Tax is never received in our book before being paid to govt. 
+        'This Is a virtual receipt which is reflected in Income in income expenditure report but not in receipt-payment report
         ReceiptsTotal = ReceiptsTotal + cv
 
         templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Value = "Misc Collection"
@@ -820,13 +846,16 @@ errH:
         'include TDS deducted by non-banking entity like Vodafone; assume all such TDS deducted payments are booked against REV-MISC-COLLECTION
         cv2 = cv2 + getTDSPaidOnSavingsAccount(curStartDate, curEndDate, "REV-MISC-COLLECTION")
 
+        'Added tax refund (debited into bank account and credited to TAX-TDS)
+        cv2 = cv2 + (-1) * getTaxRefund(curStartDate, curEndDate)
+
         ReceiptsTotal = ReceiptsTotal + cv - cv2
 
         templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Value = "    Interest Received (Saving A/c)"
         templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT1 & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Value = cv
 
 
-        templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 2)).Value = "    TDS Deducted"
+        templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 2)).Value = "    TDS"
         templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT1 & (ROW_RPTEMPLATE_DATA_START + sr + 2)).Value = (-1) * cv2
         DrawUnderline(templateSht, COL_RPTEMPLATE_RECEIPTS_AMOUNT1 & (ROW_RPTEMPLATE_DATA_START + sr + 2), Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin)
 
@@ -874,6 +903,20 @@ errH:
             templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT2 & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Font.Bold = FontStyle.Bold
             sr = sr + 1
         End If
+
+
+        'Income Tax Refund received this FY
+        'an = "TAX-REFUND"
+        'cv = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
+        'If cv <> 0 Then
+        '    ReceiptsTotal = ReceiptsTotal + cv
+
+        '    templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Value = "Refund received from Income Tax Dept."
+        '    templateSht.Range(COL_RPTEMPLATE_RECEIPTS_TEXT & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Font.Bold = FontStyle.Bold
+        '    templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT2 & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Value = cv
+        '    templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT2 & (ROW_RPTEMPLATE_DATA_START + sr + 1)).Font.Bold = FontStyle.Bold
+        '    sr = sr + 1
+        'End If
 
         'PRINT TOTAL
         templateSht.Range(COL_RPTEMPLATE_RECEIPTS_AMOUNT2 & (ROW_RPTEMPLATE_DATA_END)).Value = ReceiptsTotal
@@ -1494,11 +1537,13 @@ errH:
         templateSht.Range(COL_IETEMPLATE_EXPENDITURE_AMOUNT1 & (esr)).Font.Bold = FontStyle.Bold
         esr = esr + 1
 
+        'If curStartDate < 20170401 Then 'Changed from FY17-18: Earlier, auditor missed to note that this should not appera in Expense side in IE report. Hence corrected from next FY.
+
         'Provision For Expenses
         an = "PROVISION-FOR-EXPENSE"
-        cv = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
+        cv = getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "CR")
         ExpenditureTotal = ExpenditureTotal + cv
-        If cv <> 0 Then
+        If cv > 0 Then
             templateSht.Range(COL_IETEMPLATE_EXPENDITURE_TEXT & (esr)).Value = "Provision for Expenses"
             templateSht.Range(COL_IETEMPLATE_EXPENDITURE_TEXT & (esr)).Font.Bold = FontStyle.Bold
             templateSht.Range(COL_IETEMPLATE_EXPENDITURE_AMOUNT1 & (esr)).Value = cv
@@ -1506,7 +1551,7 @@ errH:
             esr = esr + 1
         End If
 
-
+        'End If
 
 
         DrawUnderline(templateSht, COL_IETEMPLATE_EXPENDITURE_AMOUNT1 & (esr - 1), Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin)
@@ -1529,6 +1574,19 @@ errH:
         templateSht.Range(COL_IETEMPLATE_INCOME_AMOUNT2 & (isr)).Value = cv
         templateSht.Range(COL_IETEMPLATE_INCOME_AMOUNT2 & (isr)).Font.Bold = FontStyle.Bold
         isr = isr + 1
+
+
+        'Provision For Expenses
+        an = "PROVISION-FOR-EXPENSE"
+        cv = getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "DR")
+        IncomeTotal = IncomeTotal + cv
+        If cv > 0 Then
+            templateSht.Range(COL_IETEMPLATE_INCOME_TEXT & (esr)).Value = "Adjustment of Prov for Exp (Last yr)"
+            templateSht.Range(COL_IETEMPLATE_INCOME_TEXT & (esr)).Font.Bold = FontStyle.Bold
+            templateSht.Range(COL_IETEMPLATE_INCOME_AMOUNT2 & (esr)).Value = cv
+            templateSht.Range(COL_IETEMPLATE_INCOME_AMOUNT2 & (esr)).Font.Bold = FontStyle.Bold
+            isr = isr + 1
+        End If
 
         'Misc Collection
         an = "REV-MISC"

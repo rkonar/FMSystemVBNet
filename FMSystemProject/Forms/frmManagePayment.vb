@@ -1519,7 +1519,15 @@ errH:
         myMsgBox(gErrMsg)
         gErrMsg = ""
     End Sub
-   
+
+    Private Sub cboPaymentMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPaymentMode.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cboCreditAccount_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCreditAccount.SelectedIndexChanged
+
+    End Sub
+
     Private Sub btnShowMoreInGrid_Click(sender As Object, e As EventArgs) Handles btnShowMoreInGrid.Click
 
         Select Case btnShowMoreInGrid.Text
@@ -1546,7 +1554,7 @@ errH:
 
 
         End Select
-        
+
     End Sub
 
     Private Sub btnUpdatePayment_Click(sender As Object, e As EventArgs) Handles btnUpdatePayment.Click

@@ -1299,4 +1299,16 @@ errH:
         Dim myReport As New clsReport_Cult
         myReport.genExpenseReportCult(False)
     End Sub
+
+    Private Sub tsmiManageCorrections_Click(sender As Object, e As EventArgs) Handles tsmiManageCorrections.Click
+        If isAllowedToViewModule("frmCorrections") = False Then Exit Sub
+        'launch form
+        If createNewForm("frmCorrections") = True Then
+            Dim frm As New frmCorrections
+            frm.MdiParent = Me
+            frm.Show()
+            frm.WindowState = FormWindowState.Minimized
+            frm.WindowState = FormWindowState.Maximized
+        End If
+    End Sub
 End Class

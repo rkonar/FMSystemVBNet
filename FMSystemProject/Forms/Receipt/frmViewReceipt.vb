@@ -555,10 +555,4 @@ errH:
 
     End Sub
 
-   
-    
-   
-    Private Sub txtContraReason_TextChanged(sender As Object, e As EventArgs) Handles txtContraReason.TextChanged
-
-    End Sub
 End Class

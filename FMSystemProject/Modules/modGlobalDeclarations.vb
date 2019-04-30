@@ -98,6 +98,7 @@
     Public gAllowFutureDateEntry As Boolean = False
     Public gAllowBankChargeEntryOnly As Boolean = False
     Public gLastAuditDate As String = ""
+    Public gOpenLastFY As String = "N"
 
     Public gSMS As New clsSendSMS
 

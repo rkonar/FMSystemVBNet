@@ -187,8 +187,6 @@
         cv = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
         LiabTotal = LiabTotal + pv + cv '- cv2
 
-        an = "GENERAL-FUND-CULT"
-        cv2 = (-1) * getAccountBalanceBetweenDates(curStartDate, curEndDate, an, "NET")
 
 
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr)).Value = "General Fund"
@@ -196,10 +194,14 @@
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = "   As per last a/c"
         templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = pv
         sr = sr + 1
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = "   Add Provision"
-        templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = cv2
-        LiabTotal = LiabTotal + cv2
+        If curEndDate = 20170331 Then
+            an = "GENERAL-FUND-CULT"
+            cv2 = (-1) * getAccountBalanceBetweenDates(20160401, 20160401, an, "NET")
 
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = "   Add Provision"
+            templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 1)).Value = cv2
+            LiabTotal = LiabTotal + cv2
+        End If
         If cv > 0 Then
             templateSht.Range(COL_BSTEMPLATE_LIABILITY_TEXT & (ROW_BSTEMPLATE_DATA_START + sr + 2)).Value = "   Add:Excess of Income Over Expenditure"
             templateSht.Range(COL_BSTEMPLATE_LIABILITY_AMOUNT1 & (ROW_BSTEMPLATE_DATA_START + sr + 2)).Value = cv

@@ -879,8 +879,7 @@ errH:
                 .CrAccountNo = "REV-MISC-COLLECTION"
                 .TxnType = "MISC-RECEIPT-NONOWNER"
             ElseIf optUntracedPaymentReceipt.Checked = True Then
-                .DrAccountNo = "EXP-RETURN-UNKNOWN-PAYMENT"
-                .CrAccountNo = "PROVISION-FOR-EXPENSE"
+                .CrAccountNo = "REV-MISC-COLLECTION"
                 .TxnType = "UNTRACED-PAYEE-RECEIPT"
             End If
 
@@ -940,7 +939,7 @@ errH:
         'send SMS for receipt agaisnt flat owners only
         'Note: receipt should be committed in db before calling sendSMS
 
-        If (optMiscCollection_NonFlatOwner.Checked = False) Or (optUntracedPaymentReceipt.Checked = False) Then
+        If (optMiscCollection_NonFlatOwner.Checked = False) Or (optUntracedPaymentReceipt.Checked = False)  Then
             Dim mySMS As New clsSendSMS
             mySMS.msgID = rcpt_no
             If mySMS.sendSMS4Receipt(rcpt_no) = True Then MsgBox("SMS sent successfully")

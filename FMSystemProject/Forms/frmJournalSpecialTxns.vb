@@ -43,6 +43,37 @@
             End If
         End If
 
+        If cboTxnType.Text = "TAX-SELF-PAID" Then
+            If cboPaymentMode.Text = "CHEQUE" Then
+                If Trim(cboInstrumentNo.Text) = "" Then
+                    MsgBox("Enter cheque number")
+                    Exit Sub
+                End If
+                'Check that the cheque number is available for use
+                ssql = "select tblid from tblchequebook where ChequeNo = '" & stripLeadingZero(cboInstrumentNo.Text) & "' and Status is null and AccountNo='" & cboCreditAccount.Text & "'"
+                tmpRS = gcon.Execute(ssql)
+
+                If tmpRS.EOF = True Then
+                    MsgBox("This cheque no " & cboInstrumentNo.Text & " is not available for use as per defined Cheque Books for this account in the system")
+                    Exit Sub
+                End If
+            End If
+        End If
+
+        If cboTxnType.Text = "CASH-WITHDRAWAL-BY-CHEQUE" Then
+            If Trim(cboInstrumentNo.Text) = "" Then
+                MsgBox("Enter cheque number")
+                Exit Sub
+            End If
+            'Check that the cheque number is available for use
+            ssql = "select tblid from tblchequebook where ChequeNo = '" & stripLeadingZero(cboInstrumentNo.Text) & "' and Status is null and AccountNo='" & cboCreditAccount.Text & "'"
+            tmpRS = gcon.Execute(ssql)
+
+            If tmpRS.EOF = True Then
+                MsgBox("This cheque no " & cboInstrumentNo.Text & " is not available for use as per defined Cheque Books for this account in the system")
+                Exit Sub
+            End If
+        End If
         'If cboTxnType.Text = "CHEQUE-2-BANK" Then
         '    ssql = "select tblid from tbljournal where Status is null and DocRef like '%Cheque No:" & stripLeadingZero(txtInstrumentNo.Text) & ",%' and TxnDate='" & DateTime.Parse(dtpTxnDate.Text).ToString(DB_DATEFORMAT) & "'"
         '    tmpRS = gcon.Execute(ssql)
@@ -76,6 +107,12 @@
         '        Exit Sub
         '    End If
         'Else
+        If cboTxnType.Text = "TAX-REFUND" Then
+            If (cboInstrumentNo.Text = "") Then
+                MsgBox("Provide NEFT ref. no.")
+                Exit Sub
+            End If
+        End If
 
         If Trim(txtNarration.Text) = "" Then
             MsgBox("Enter narration")
@@ -85,10 +122,13 @@
 
         JournalPayment()
 
+        If cboPaymentMode.Text = "CHEQUE" Then ReloadCheques()
 
         txtTxnAmount.Text = ""
         'txtInstrumentNo.Text = ""
         txtNarration.Text = ""
+        cboInstrumentNo.Text = ""
+        cboPaymentMode.Text = ""
 
         PopulateJournal_b()
 
@@ -190,6 +230,97 @@
                 End If
 
                 gcon.CommitTrans()
+            ElseIf cboTxnType.Text = "TAX-REFUND" Then
+                If cboPaymentMode.Text = "ONLINE" Then
+                    .DocRef = "(Online Transfer Ref. No" & stripLeadingZero(cboInstrumentNo.Text) & ", Transfer Date: " & dtpInstrumentDate.Text & ", Bank:" & cboBankName.Text
+                End If
+
+                .VoucherType = "RV"
+                .TxnDate = dtpTxnDate.Text
+
+                .DrAccountNo = cboDebitAccount.Text
+                .CrAccountNo = cboCreditAccount.Text
+                .Amount = CDbl(txtTxnAmount.Text)
+                .TxnType = "TAX-REFUND"
+
+                gcon.BeginTrans()
+                .CreateTransaction()
+                If .Status = False Then GoTo errH
+                gcon.CommitTrans()
+            ElseIf cboTxnType.Text = "BANKCHARGE-REFUND" Then
+                .DocRef = cboTxnType.Text & ",as per bank statement"
+                .DocRef = .DocRef & ",Bank Charge Refund"
+                .VoucherType = "RV"
+                .TxnDate = dtpTxnDate.Text
+
+                .DrAccountNo = cboDebitAccount.Text
+                .CrAccountNo = cboCreditAccount.Text
+                .Amount = CDbl(txtTxnAmount.Text)
+                .TxnType = "BANKCHARGE-REFUND"
+
+                gcon.BeginTrans()
+                .CreateTransaction()
+                If .Status = False Then GoTo errH
+                gcon.CommitTrans()
+            ElseIf cboTxnType.Text = "TAX-SELF-PAID" Then
+                If cboPaymentMode.Text = "CASH" Then
+                    .DocRef = "(Paid in CASH)"
+                    .VoucherType = "PV"
+                ElseIf cboPaymentMode.Text = "CHEQUE" Then
+                    .DocRef = "(Cheque No:" & stripLeadingZero(cboInstrumentNo.Text) & ", Cheque Date: " & dtpInstrumentDate.Text & ", Bank:" & cboBankName.Text & ")"
+                    .VoucherType = "PV"
+                    'ElseIf cboPaymentMode.Text = "DD" Then
+                    '    .DocRef = "(DD No:" & stripLeadingZero(cboInstrumentNo.Text) & ", DD Date: " & dtpInstrumentDate.Text & ", Bank:" & cboBankName.Text 
+                ElseIf cboPaymentMode.Text = "ONLINE" Then
+                    .DocRef = "(Tran. Ref. No:" & stripLeadingZero(cboInstrumentNo.Text) & ", Tran. Date: " & dtpInstrumentDate.Text & ", Bank:" & cboBankName.Text
+                    .VoucherType = "PV"
+                End If
+
+                .TxnType = "TAX-TDS"
+                .DrAccountNo = cboDebitAccount.Text
+                .CrAccountNo = cboCreditAccount.Text
+                .Amount = txtTxnAmount.Text
+                .TxnDate = dtpTxnDate.Text
+
+                gcon.BeginTrans()
+                .CreateTransaction()
+
+                If .Status = False Then GoTo errH
+                gcon.CommitTrans()
+
+            ElseIf (cboTxnType.Text = "CASH-WITHDRAWAL-BY-CHEQUE") Then
+                .DocRef = cboTxnType.Text & ",Cheque No:" & stripLeadingZero(cboInstrumentNo.Text) & ",Cheque Date:" & dtpInstrumentDate.Value & ",Yourself withdrawal"
+                .VoucherType = "CV"
+                .TxnType = cboTxnType.Text
+                .DrAccountNo = cboDebitAccount.Text
+                .CrAccountNo = cboCreditAccount.Text
+                .Amount = txtTxnAmount.Text
+                .TxnDate = dtpTxnDate.Text
+
+                gcon.BeginTrans()
+                .CreateTransaction()
+
+                If .Status = False Then GoTo errH
+
+                ssql = "Update tblchequebook set Status='U',Remarks='Used' where ChequeNo = '" & stripLeadingZero(cboInstrumentNo.Text) & "' and AccountNo='" & cboCreditAccount.Text & "'"
+                gcon.Execute(ssql)
+
+                gcon.CommitTrans()
+            ElseIf cboTxnType.Text = "VODAFONE-TAX-ADJUSTMENT" Then
+                .DocRef = cboTxnType.Text & ",as per Traces Form 26AS statement"
+                .DocRef = .DocRef & ",Tax Paid Directly" 'Vodafone paying the TDS directly and doing us TDS deducted payment
+                .VoucherType = "RV"
+                .TxnDate = dtpTxnDate.Text
+
+                .DrAccountNo = cboDebitAccount.Text
+                .CrAccountNo = cboCreditAccount.Text
+                .Amount = CDbl(txtTxnAmount.Text)
+                .TxnType = "VODAFONE-TAX-ADJUSTMENT"
+
+                gcon.BeginTrans()
+                .CreateTransaction()
+                If .Status = False Then GoTo errH
+                gcon.CommitTrans()
             End If
 
             'If cboTxnType.Text = "CHEQUE-2-BANK" Then
@@ -277,11 +408,22 @@ errH:
 
         cboTxnType.Items.Clear()
 
+        cboTxnType.Items.Add("CASH-WITHDRAWAL-BY-CHEQUE")
         cboTxnType.Items.Add("PROVISION-FOR-AUDIT-FEE")
         cboTxnType.Items.Add("PROVISION-FOR-TAX")
         cboTxnType.Items.Add("DEPRECIATION-EXPENSE")
         cboTxnType.Items.Add("GENERAL-FUND-2-CORPUS-FUND")
         cboTxnType.Items.Add("INTEREST-4M-BANK")
+        cboTxnType.Items.Add("TAX-SELF-PAID")
+        cboTxnType.Items.Add("BANKCHARGE-REFUND")
+        cboTxnType.Items.Add("TAX-REFUND")
+        cboTxnType.Items.Add("VODAFONE-TAX-ADJUSTMENT")
+
+
+        cboBankName.Items.Clear()
+        For x = 1 To OurBankNames.Length
+            cboBankName.Items.Add(OurBankNames(x - 1))
+        Next
 
         'cboTxnType.Items.Add("CHEQUE-2-BANK")
         'cboTxnType.Items.Add("NEFT-2-BANK")
@@ -426,19 +568,38 @@ errH:
 
     End Sub
 
-    Sub loadChequeIssuedAccounts()
-        Dim expActRS As ADODB.Recordset
+    Sub loadChequeIssuedAccounts(where2Load As String)
+        Dim actRS As ADODB.Recordset
 
-        cboDebitAccount.Items.Clear()
+        If where2Load = "DR" Then
+            cboDebitAccount.Items.Clear()
+        ElseIf where2Load = "CR" Then
+            cboCreditAccount.Items.Clear()
+        ElseIf where2Load = "BOTH" Then
+            cboDebitAccount.Items.Clear()
+            cboCreditAccount.Items.Clear()
+        End If
+
         ssql = "select AccountNo from tblaccounts where Status='A' and LeafAccount='Y' and AccountType='Liabilities' and ParentAccountNo = 'CHEQUE-ISSUED-ALL'"
-        expActRS = gcon.Execute(ssql)
-
-        While expActRS.EOF = False
-            cboDebitAccount.Items.Add(expActRS("AccountNo").Value.ToString)
-            expActRS.MoveNext()
+        actRS = gcon.Execute(ssql)
+        While actRS.EOF = False
+            If where2Load = "DR" Then
+                cboDebitAccount.Items.Add(actRS("AccountNo").Value.ToString)
+                cboDebitAccount.Text = ""
+            ElseIf where2Load = "CR" Then
+                cboCreditAccount.Items.Add(actRS("AccountNo").Value.ToString)
+                cboCreditAccount.Text = ""
+            ElseIf where2Load = "BOTH" Then
+                cboDebitAccount.Items.Add(actRS("AccountNo").Value.ToString)
+                cboCreditAccount.Items.Add(actRS("AccountNo").Value.ToString)
+                cboCreditAccount.Text = ""
+                cboDebitAccount.Text = ""
+            End If
+            actRS.MoveNext()
         End While
-        expActRS.Close()
+        actRS.Close()
     End Sub
+
 
     Private Sub cboDebitAccount_SelectedValueChanged(sender As Object, e As System.EventArgs) Handles cboDebitAccount.SelectedValueChanged
         txtDebitActDesc.Text = getAccountName(cboDebitAccount.Text)
@@ -457,6 +618,7 @@ errH:
             loadDepreciationAcInDebitCombo()
         End If
 
+        If cboPaymentMode.Text = "CHEQUE" Then ReloadCheques()
 
     End Sub
 
@@ -474,20 +636,29 @@ errH:
 
         dgvJournal_b.Rows.Clear()
 
-        journalQuerySQL = "select * from tbljournal "
-        journalQuerySQL = journalQuerySQL & " where TxnDate='" & DateTime.Parse(dtpTxnDate.Text).ToString(DB_DATEFORMAT) & "'"
+        journalQuerySQL = "select * from tbljournal where "
+        'journalQuerySQL = journalQuerySQL & " TxnDate='" & DateTime.Parse(dtpTxnDate.Text).ToString(DB_DATEFORMAT) & "' and "
 
-        If cboTxnType.Text = "INTEREST-4M-BANK" Then
-            journalQuerySQL = journalQuerySQL & " and TxnType in ('INTEREST-4M-BANK','TAX-TDS')"
+        If cboTxnType.Text = "CASH-WITHDRAWAL-BY-CHEQUE" Then
+            journalQuerySQL = journalQuerySQL & "  TxnType ='CASH-WITHDRAWAL-BY-CHEQUE'"
+        ElseIf cboTxnType.Text = "INTEREST-4M-BANK" Then
+            journalQuerySQL = journalQuerySQL & " TxnType in ('INTEREST-4M-BANK','TAX-TDS')"
         ElseIf cboTxnType.Text = "PROVISION-FOR-TAX" Then
-            journalQuerySQL = journalQuerySQL & " and TxnType ='EXPENSE'"
+            journalQuerySQL = journalQuerySQL & " TxnType ='EXPENSE' And TxnDate='" & DateTime.Parse(dtpTxnDate.Text).ToString(DB_DATEFORMAT) & "'"
         ElseIf cboTxnType.Text = "PROVISION-FOR-AUDIT-FEE" Then
-            journalQuerySQL = journalQuerySQL & " and TxnType ='EXPENSE'"
+            journalQuerySQL = journalQuerySQL & " TxnType ='EXPENSE' And TxnDate='" & DateTime.Parse(dtpTxnDate.Text).ToString(DB_DATEFORMAT) & "'"
         ElseIf cboTxnType.Text = "GENERAL-FUND-2-CORPUS-FUND" Then
-            journalQuerySQL = journalQuerySQL & " and TxnType ='BALANCESHEET-TXN'"
+            journalQuerySQL = journalQuerySQL & " TxnType ='BALANCESHEET-TXN'"
         ElseIf cboTxnType.Text = "DEPRECIATION-EXPENSE" Then
-            journalQuerySQL = journalQuerySQL & " and TxnType ='DEPRECIATION-EXPENSE'"
-
+            journalQuerySQL = journalQuerySQL & " TxnType ='DEPRECIATION-EXPENSE'"
+        ElseIf cboTxnType.Text = "TAX-SELF-PAID" Then
+            journalQuerySQL = journalQuerySQL & " TxnType ='TAX-TDS'"
+        ElseIf cboTxnType.Text = "BANKCHARGE-REFUND" Then
+            journalQuerySQL = journalQuerySQL & " TxnType ='BANKCHARGE-REFUND'"
+        ElseIf cboTxnType.Text = "TAX-REFUND" Then
+            journalQuerySQL = journalQuerySQL & " TxnType ='TAX-REFUND'"
+        ElseIf cboTxnType.Text = "VODAFONE-TAX-ADJUSTMENT" Then
+            journalQuerySQL = journalQuerySQL & " TxnType ='VODAFONE-TAX-ADJUSTMENT'"
         End If
         'journalQuerySQL = journalQuerySQL & " (AccountNo='" & cboCreditAccount.Text & "' OR "
         'journalQuerySQL = journalQuerySQL & "  AccountNo='" & cboDebitAccount.Text & "' )"
@@ -573,8 +744,39 @@ errH:
         'btnLoadTDAccountsInCrCombo.Enabled = False
         'btnLoadTDAccountsInDrCombo.Enabled = False
 
+        panelPaymentMode.Enabled = False
+        cboInstrumentNo.DropDownStyle = ComboBoxStyle.DropDown
+        With cboPaymentMode
+            .Items.Clear()
+            .Items.Add("CASH")
+            .Items.Add("CHEQUE")
+            .Items.Add("ONLINE")
+            .SelectedIndex = 0
+            .Enabled = True
+        End With
 
         Select Case cboTxnType.Text
+
+            Case "CASH-WITHDRAWAL-BY-CHEQUE"
+                With cboDebitAccount
+                    .Items.Clear()
+                    .Items.Add("CASHBOX")
+                    .SelectedIndex = 0
+                    .Enabled = False
+                End With
+                panelPaymentMode.Enabled = True
+                With cboPaymentMode
+                    .Items.Clear()
+                    .Items.Add("CHEQUE")
+                    .SelectedIndex = 0
+                    .Enabled = True
+                End With
+
+                'cboPaymentMode.Text = "CHEQUE"
+                'cboPaymentMode.Enabled = False
+                loadChequeIssuedAccounts("CR")
+                cboInstrumentNo.Enabled = True
+                cboInstrumentNo.DropDownStyle = ComboBoxStyle.DropDownList
 
             Case "PROVISION-FOR-AUDIT-FEE"
                 With cboDebitAccount
@@ -658,7 +860,7 @@ errH:
                 '    lblTxnType.Text = "Cheque deposited into our bank account"
 
                 'Case "BANK-2-CHEQUE"
-                '    loadChequeIssuedAccounts()
+                '    loadChequeIssuedAccounts("DR")
                 '    'cboDebitAccount.Items.Add("CHEQUE-ISSUED")
                 '    'cboDebitAccount.Text = "CHEQUE-ISSUED"
 
@@ -786,6 +988,87 @@ errH:
 
                 '    lblTxnType.Text = "Term Deposit matured and deposited to our bank account through direct transfer"
 
+            Case "BANKCHARGE-REFUND"
+                loadBankAccounts("DR")
+                'loadBankInterestAccounts()
+                cboCreditAccount.Items.Clear()
+                cboCreditAccount.Items.Add("EXPCUR-BANKCHARGES")
+                cboCreditAccount.Text = "EXPCUR-BANKCHARGES"
+                cboDebitAccount.Enabled = True
+                cboCreditAccount.Enabled = True
+                txtTaxAmount.Visible = True
+                lblTaxAmt.Visible = True
+
+                lblTxnType.Text = "Bank refunded charges, applied earlier, into our bank account"
+
+            Case "TAX-REFUND"
+                panelPaymentMode.Enabled = True
+                cboPaymentMode.Text = "ONLINE"
+                cboDebitAccount.Items.Clear()
+                cboDebitAccount.Items.Add("NEFT-NOT-RECONCILED")
+                cboDebitAccount.Text = "NEFT-NOT-RECONCILED"
+                'loadBankInterestAccounts()
+                cboCreditAccount.Items.Clear()
+                cboCreditAccount.Items.Add("TAX-TDS")
+                cboCreditAccount.Text = "TAX-TDS"
+                cboDebitAccount.Enabled = True
+                cboCreditAccount.Enabled = True
+                txtTaxAmount.Visible = True
+                lblTaxAmt.Visible = True
+
+                lblTxnType.Text = "Tax refund by income tax deposited directly into our bank account"
+
+            Case "TAX-SELF-PAID"
+                panelPaymentMode.Enabled = True
+                With cboDebitAccount
+                    .Items.Clear()
+                    .Items.Add("TAX-SELF-PAID")
+                    .SelectedIndex = 0
+                    .Enabled = False
+                End With
+
+                Select Case cboPaymentMode.Text
+                    Case "CHEQUE"
+                        loadChequeIssuedAccounts("CR")
+                    Case "CASH"
+                        With cboCreditAccount
+                            .Items.Clear()
+                            .Items.Add("CASHBOX")
+                            .SelectedIndex = 0
+                            .Enabled = False
+                        End With
+                        'Case "ONLINE"
+                        '    With cboCreditAccount
+                        '        .Items.Clear()
+                        '        .Items.Add("NEFT-NOT-RECONCILED")
+                        '        .SelectedIndex = 0
+                        '        .Enabled = False
+                        '    End With
+
+
+                End Select
+
+
+
+
+
+                With cboCreditAccount
+                    '.Items.Clear()
+                    '.SelectedIndex = 0
+                    .Enabled = True
+                End With
+
+            Case "VODAFONE-TAX-ADJUSTMENT"
+                panelPaymentMode.Enabled = False
+                cboDebitAccount.Items.Clear()
+                cboDebitAccount.Items.Add("TAX-TDS")
+                cboDebitAccount.Text = "TAX-TDS"
+
+                cboCreditAccount.Items.Clear()
+                cboCreditAccount.Items.Add("REV-MISC-COLLECTION")
+                cboCreditAccount.Text = "REV-MISC-COLLECTION"
+
+                lblTxnType.Text = "Vodafone paying the TDS directly and doing us TDS deducted payment"
             Case Else
 
 
@@ -859,6 +1142,9 @@ errH:
         If cboDebitAccount.Text = "" Then Exit Sub
 
         ssql = "select distinct Narration from tbljournal where AccountNo = '" & cboDebitAccount.Text & "'"
+        If cboTxnType.Text = "CASH-WITHDRAWAL-BY-CHEQUE" Then
+            ssql = ssql & " and TxnType ='CASH-WITHDRAWAL-BY-CHEQUE'"
+        End If
         If cboTxnType.Text = "INTEREST-4M-BANK" Then
             ssql = ssql & " and TxnType in ('INTEREST-4M-BANK','TAX-TDS')"
         End If
@@ -873,6 +1159,15 @@ errH:
         End If
         If cboTxnType.Text = "DEPRECIATION-EXPENSE" Then
             ssql = ssql & " and TxnType ='DEPRECIATION-EXPENSE'"
+        End If
+        If cboTxnType.Text = "BANKCHARGE-REFUND" Then
+            ssql = ssql & " and TxnType ='BANKCHARGE-REFUND'"
+        End If
+        If cboTxnType.Text = "TAX-REFUND" Then
+            ssql = ssql & " and TxnType ='TAX-REFUND'"
+        End If
+        If cboTxnType.Text = "VODAFONE-TAX-ADJUSTMENT" Then
+            ssql = ssql & " and TxnType ='VODAFONE-TAX-ADJUSTMENT'"
         End If
         ssql = ssql & "  order by Narration"
         ssql = ssql & " LIMIT 0, 25"
@@ -992,6 +1287,97 @@ errH:
     Private Sub btnLoadTDActInDrCombo_Click(sender As Object, e As EventArgs) Handles btnLoadTDActInDrCombo.Click
         loadTDBankAccounts("DR")
     End Sub
+    Sub ReloadCheques()
+        cboInstrumentNo.Items.Clear()
+        tmpRS = gcon.Execute("select ChequeNo from tblchequebook where Status is null and AccountNo='" & cboCreditAccount.Text & "' order by tblid Asc")
+        While tmpRS.EOF = False
+            cboInstrumentNo.Items.Add(tmpRS("ChequeNo").Value.ToString)
+            tmpRS.MoveNext()
+        End While
+    End Sub
 
+    Private Sub cboPaymentMode_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboPaymentMode.SelectedValueChanged
 
+        'cboInstrumentNo.DropDownStyle = ComboBoxStyle.DropDownList
+
+        If cboPaymentMode.Text = "CASH" Then
+            dtpInstrumentDate.Enabled = False
+            cboInstrumentNo.Enabled = False
+            'cboBankName.Enabled = False
+
+            'dtpInstrumentDate.Text = ""
+            cboInstrumentNo.Text = ""
+            'cboBankName.Text = ""
+
+            'If (cboExpenseType.Text = "NORMAL") Or (cboExpenseType.Text = "PREPAID") Then
+            cboCreditAccount.Items.Clear()
+            cboCreditAccount.Items.Add("CASHBOX")
+            cboCreditAccount.Text = "CASHBOX"
+            'txtCreditActDesc.Text = getAccountName(cboCreditAccount.Text)
+            'End If
+
+        ElseIf cboPaymentMode.Text = "CHEQUE" Then
+            dtpInstrumentDate.Enabled = True
+            cboInstrumentNo.Enabled = True
+            'cboBankName.Enabled = True
+
+            lblInstrumentDate.Text = "Cheque Date"
+            lblInstrumentNo.Text = "Cheque No"
+
+            'If (cboExpenseType.Text = "NORMAL") Or (cboExpenseType.Text = "PREPAID") Then
+            cboCreditAccount.Items.Clear()
+            cboCreditAccount.Items.Add("CHEQUE-ISSUED")
+            cboCreditAccount.Text = "CHEQUE-ISSUED"
+            loadChequeIssuedAccounts("CR")
+            cboCreditAccount.Enabled = True
+
+            'txtCreditActDesc.Text = ""
+            'End If
+
+            'ElseIf cboPaymentMode.Text = "DD" Then
+            '    cboInstrumentNo.DropDownStyle = ComboBoxStyle.DropDown
+            '    dtpInstrumentDate.Enabled = True
+            '    cboInstrumentNo.Enabled = True
+            '    cboBankName.Enabled = True
+
+            '    lblInstrumentDate.Text = "DD Date"
+            '    lblInstrumentNo.Text = "DD No"
+
+            '    'If (cboExpenseType.Text = "NORMAL") Or (cboExpenseType.Text = "PREPAID") Then
+            '    cboCreditAccount.Items.Clear()
+            '    cboCreditAccount.Items.Add("DD")
+            '    cboCreditAccount.Text = "DD"
+            '    txtCreditActDesc.Text = getAccountName(cboCreditAccount.Text)
+            '    'End If
+
+        ElseIf cboPaymentMode.Text = "ONLINE" Then
+            cboInstrumentNo.DropDownStyle = ComboBoxStyle.DropDown
+            dtpInstrumentDate.Enabled = True
+            cboInstrumentNo.Enabled = True
+            'cboBankName.Enabled = True
+            lblInstrumentDate.Text = "Transfer Date"
+            lblInstrumentNo.Text = "Transaction Ref. No"
+            'dtpInstrumentDate.Text = dtpPaymentDate.Text
+            'If (cboExpenseType.Text = "NORMAL") Or (cboExpenseType.Text = "PREPAID") Then
+            'loadBankAccounts("CR")
+            'cboCreditAccount.Enabled = True
+            'txtCreditActDesc.Text = ""
+            'End If
+
+        End If
+        'lblDrBalance.Text = addThousandSeparator(getAccountBalance(dtpPaymentDate.Text, cboDebitAccount.Text), False)
+        'lblCrBalance.Text = addThousandSeparator(getAccountBalance(dtpPaymentDate.Text, cboCreditAccount.Text), False)
+    End Sub
+
+    Private Sub cboPaymentMode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboPaymentMode.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cboCreditAccount_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCreditAccount.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cboTxnType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTxnType.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -98,7 +98,7 @@
                 .VoucherType = "JV"
                 .TxnType = "ADVANCE"
             ElseIf cboTxnType.Text = "ELECTRICITY-REFUND" Then
-                .DocRef = cboTxnType.Text & ",Cheque No:" & stripLeadingZero(cboInstrumentNo.Text) & ",Electricity Refund"
+                .DocRef = cboTxnType.Text & ",Cheque No:" & stripLeadingZero(cboInstrumentNo.Text) & ",Cheque Date:" & dtpInstrumentDate.Value & ",Electricity Refund"
                 .VoucherType = "JV"
                 .TxnType = "ADVANCE"
             ElseIf cboTxnType.Text = "ELECTRICITY-CONSUMPTION-AGAINST-ADVANCE" Then
@@ -117,11 +117,7 @@
                 .Amount = txtTxnAmount.Text
                 .TxnDate = dtpTxnDate.Text
 
-                gcon.BeginTrans()
-                .CreateTransaction()
 
-                If .Status = False Then GoTo errH
-                gcon.CommitTrans()
             ElseIf cboTxnType.Text = "GENERAL-FUND-2-CORPUS-FUND" Then
                 .DocRef = "-"
                 .VoucherType = "JV"
@@ -131,11 +127,7 @@
                 .Amount = txtTxnAmount.Text
                 .TxnDate = dtpTxnDate.Text
 
-                gcon.BeginTrans()
-                .CreateTransaction()
 
-                If .Status = False Then GoTo errH
-                gcon.CommitTrans()
             End If
 
             'If cboTxnType.Text = "CHEQUE-2-BANK" Then

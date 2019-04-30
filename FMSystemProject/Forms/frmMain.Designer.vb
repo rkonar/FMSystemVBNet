@@ -64,6 +64,9 @@ Partial Class frmMain
         Me.tsmiBalanceSheetCultural = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiIncomeExpenseReportCultural = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReceiptsPaymentsReportCultural = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiExpenseReportCult = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiExpenseReportCult_WithSummary = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiExpenseReportCult_WithoutSummary = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransactionDrillToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BalanceSheetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BillToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -115,9 +118,7 @@ Partial Class frmMain
         Me.cmsChangeUserPassword = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotifyIcon4OpenCases = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer4OpenCases = New System.Windows.Forms.Timer(Me.components)
-        Me.tsmiExpenseReportCult = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiExpenseReportCult_WithSummary = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiExpenseReportCult_WithoutSummary = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiManageCorrections = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMenubar.SuspendLayout()
         Me.ssStatusBar.SuspendLayout()
         Me.statusbarContextMenu.SuspendLayout()
@@ -382,6 +383,25 @@ Partial Class frmMain
         Me.tsmiReceiptsPaymentsReportCultural.Size = New System.Drawing.Size(211, 22)
         Me.tsmiReceiptsPaymentsReportCultural.Text = "Receipts Payments Report"
         '
+        'tsmiExpenseReportCult
+        '
+        Me.tsmiExpenseReportCult.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiExpenseReportCult_WithSummary, Me.tsmiExpenseReportCult_WithoutSummary})
+        Me.tsmiExpenseReportCult.Name = "tsmiExpenseReportCult"
+        Me.tsmiExpenseReportCult.Size = New System.Drawing.Size(211, 22)
+        Me.tsmiExpenseReportCult.Text = "Expense Report"
+        '
+        'tsmiExpenseReportCult_WithSummary
+        '
+        Me.tsmiExpenseReportCult_WithSummary.Name = "tsmiExpenseReportCult_WithSummary"
+        Me.tsmiExpenseReportCult_WithSummary.Size = New System.Drawing.Size(171, 22)
+        Me.tsmiExpenseReportCult_WithSummary.Text = "With Summary"
+        '
+        'tsmiExpenseReportCult_WithoutSummary
+        '
+        Me.tsmiExpenseReportCult_WithoutSummary.Name = "tsmiExpenseReportCult_WithoutSummary"
+        Me.tsmiExpenseReportCult_WithoutSummary.Size = New System.Drawing.Size(171, 22)
+        Me.tsmiExpenseReportCult_WithoutSummary.Text = "Without Summary"
+        '
         'TransactionDrillToolStripMenuItem
         '
         Me.TransactionDrillToolStripMenuItem.Name = "TransactionDrillToolStripMenuItem"
@@ -504,19 +524,19 @@ Partial Class frmMain
         'tsmiManageJournal
         '
         Me.tsmiManageJournal.Name = "tsmiManageJournal"
-        Me.tsmiManageJournal.Size = New System.Drawing.Size(234, 22)
+        Me.tsmiManageJournal.Size = New System.Drawing.Size(233, 22)
         Me.tsmiManageJournal.Text = "Manage Journal"
         '
         'tsmiSpecialTransactions
         '
         Me.tsmiSpecialTransactions.Name = "tsmiSpecialTransactions"
-        Me.tsmiSpecialTransactions.Size = New System.Drawing.Size(234, 22)
+        Me.tsmiSpecialTransactions.Size = New System.Drawing.Size(233, 22)
         Me.tsmiSpecialTransactions.Text = "Special Transactions"
         '
         'tsmiSpecialTransactionsCultural
         '
         Me.tsmiSpecialTransactionsCultural.Name = "tsmiSpecialTransactionsCultural"
-        Me.tsmiSpecialTransactionsCultural.Size = New System.Drawing.Size(234, 22)
+        Me.tsmiSpecialTransactionsCultural.Size = New System.Drawing.Size(233, 22)
         Me.tsmiSpecialTransactionsCultural.Text = "Special Transactions - Cultural"
         '
         'InventoryToolStripMenuItem
@@ -534,7 +554,7 @@ Partial Class frmMain
         '
         'tsmi_System
         '
-        Me.tsmi_System.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiCOA, Me.tsmiDBBackup, Me.tsmiMarkEndOfDay, Me.tsmiSyncOwnerDetailsFromPortal, Me.tsmiFutureDateEntry, Me.tsmiBackDateEntry, Me.tsmiManageReceiptBook, Me.tsmiManageChequeBook, Me.tsmiManageVoucherBook, Me.tsmiManageSystemParameter})
+        Me.tsmi_System.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiCOA, Me.tsmiDBBackup, Me.tsmiMarkEndOfDay, Me.tsmiSyncOwnerDetailsFromPortal, Me.tsmiFutureDateEntry, Me.tsmiBackDateEntry, Me.tsmiManageReceiptBook, Me.tsmiManageChequeBook, Me.tsmiManageVoucherBook, Me.tsmiManageSystemParameter, Me.tsmiManageCorrections})
         Me.tsmi_System.Name = "tsmi_System"
         Me.tsmi_System.Size = New System.Drawing.Size(57, 20)
         Me.tsmi_System.Text = "System"
@@ -629,7 +649,7 @@ Partial Class frmMain
         'tsmiShowTemporaryReceipts
         '
         Me.tsmiShowTemporaryReceipts.Name = "tsmiShowTemporaryReceipts"
-        Me.tsmiShowTemporaryReceipts.Size = New System.Drawing.Size(211, 22)
+        Me.tsmiShowTemporaryReceipts.Size = New System.Drawing.Size(210, 22)
         Me.tsmiShowTemporaryReceipts.Text = "Show Temporary Receipts"
         '
         'tsmiClose
@@ -714,24 +734,11 @@ Partial Class frmMain
         '
         Me.Timer4OpenCases.Interval = 60000
         '
-        'tsmiExpenseReportCult
+        'tsmiManageCorrections
         '
-        Me.tsmiExpenseReportCult.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiExpenseReportCult_WithSummary, Me.tsmiExpenseReportCult_WithoutSummary})
-        Me.tsmiExpenseReportCult.Name = "tsmiExpenseReportCult"
-        Me.tsmiExpenseReportCult.Size = New System.Drawing.Size(211, 22)
-        Me.tsmiExpenseReportCult.Text = "Expense Report"
-        '
-        'tsmiExpenseReportCult_WithSummary
-        '
-        Me.tsmiExpenseReportCult_WithSummary.Name = "tsmiExpenseReportCult_WithSummary"
-        Me.tsmiExpenseReportCult_WithSummary.Size = New System.Drawing.Size(171, 22)
-        Me.tsmiExpenseReportCult_WithSummary.Text = "With Summary"
-        '
-        'tsmiExpenseReportCult_WithoutSummary
-        '
-        Me.tsmiExpenseReportCult_WithoutSummary.Name = "tsmiExpenseReportCult_WithoutSummary"
-        Me.tsmiExpenseReportCult_WithoutSummary.Size = New System.Drawing.Size(171, 22)
-        Me.tsmiExpenseReportCult_WithoutSummary.Text = "Without Summary"
+        Me.tsmiManageCorrections.Name = "tsmiManageCorrections"
+        Me.tsmiManageCorrections.Size = New System.Drawing.Size(238, 22)
+        Me.tsmiManageCorrections.Text = "Manage Corrections"
         '
         'frmMain
         '
@@ -851,5 +858,5 @@ Partial Class frmMain
     Friend WithEvents tsmiExpenseReportCult As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiExpenseReportCult_WithSummary As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiExpenseReportCult_WithoutSummary As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents tsmiManageCorrections As ToolStripMenuItem
 End Class

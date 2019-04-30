@@ -105,6 +105,13 @@
     
     Public Function IsDateInFinYear(thisDate As String) As Boolean
         IsDateInFinYear = False
+
+        gOpenLastFY = getSysParamValue("OPEN_LAST_FY") 'TOGGLE FLAG TO ALLOW TEMPORARY OPENING OF LAST FY BOOKS
+        If gOpenLastFY.Equals("Y") Then
+            IsDateInFinYear = True
+            Exit Function
+        End If
+
         gLastAuditDate = getSysParamValue("LAST_AUDIT_DATE") 'in YYYYMMDD format
 
         If thisDate <= gLastAuditDate Then

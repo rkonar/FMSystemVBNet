@@ -22,12 +22,12 @@ Partial Class frmJournalSpecialTxns
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtTxnAmount = New System.Windows.Forms.TextBox()
@@ -78,14 +78,24 @@ Partial Class frmJournalSpecialTxns
         Me.lblTolFAVal = New System.Windows.Forms.Label()
         Me.btnLoadTDActInCrCombo = New System.Windows.Forms.Button()
         Me.btnLoadTDActInDrCombo = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cboPaymentMode = New System.Windows.Forms.ComboBox()
+        Me.cboInstrumentNo = New System.Windows.Forms.ComboBox()
+        Me.lblInstrumentDate = New System.Windows.Forms.Label()
+        Me.dtpInstrumentDate = New System.Windows.Forms.DateTimePicker()
+        Me.lblInstrumentNo = New System.Windows.Forms.Label()
+        Me.cboBankName = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.panelPaymentMode = New System.Windows.Forms.Panel()
         CType(Me.dgvJournal_b, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelPaymentMode.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSave
         '
         Me.btnSave.AutoSize = True
         Me.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnSave.Location = New System.Drawing.Point(28, 233)
+        Me.btnSave.Location = New System.Drawing.Point(28, 273)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(42, 23)
         Me.btnSave.TabIndex = 8
@@ -96,7 +106,7 @@ Partial Class frmJournalSpecialTxns
         '
         Me.btnCancel.AutoSize = True
         Me.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnCancel.Location = New System.Drawing.Point(84, 233)
+        Me.btnCancel.Location = New System.Drawing.Point(84, 273)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(43, 23)
         Me.btnCancel.TabIndex = 9
@@ -142,7 +152,7 @@ Partial Class frmJournalSpecialTxns
         '
         'lblRemarks
         '
-        Me.lblRemarks.Location = New System.Drawing.Point(8, 146)
+        Me.lblRemarks.Location = New System.Drawing.Point(8, 200)
         Me.lblRemarks.Name = "lblRemarks"
         Me.lblRemarks.Size = New System.Drawing.Size(122, 20)
         Me.lblRemarks.TabIndex = 90
@@ -151,7 +161,7 @@ Partial Class frmJournalSpecialTxns
         '
         'txtNarration
         '
-        Me.txtNarration.Location = New System.Drawing.Point(136, 126)
+        Me.txtNarration.Location = New System.Drawing.Point(136, 180)
         Me.txtNarration.MaxLength = 5000
         Me.txtNarration.Multiline = True
         Me.txtNarration.Name = "txtNarration"
@@ -161,7 +171,7 @@ Partial Class frmJournalSpecialTxns
         '
         'lblDebitDesc
         '
-        Me.lblDebitDesc.Location = New System.Drawing.Point(6, 95)
+        Me.lblDebitDesc.Location = New System.Drawing.Point(6, 149)
         Me.lblDebitDesc.Name = "lblDebitDesc"
         Me.lblDebitDesc.Size = New System.Drawing.Size(115, 24)
         Me.lblDebitDesc.TabIndex = 107
@@ -173,14 +183,14 @@ Partial Class frmJournalSpecialTxns
         Me.cboDebitAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboDebitAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cboDebitAccount.FormattingEnabled = True
-        Me.cboDebitAccount.Location = New System.Drawing.Point(136, 95)
+        Me.cboDebitAccount.Location = New System.Drawing.Point(136, 149)
         Me.cboDebitAccount.Name = "cboDebitAccount"
         Me.cboDebitAccount.Size = New System.Drawing.Size(287, 21)
         Me.cboDebitAccount.TabIndex = 6
         '
         'lblCreditDesc
         '
-        Me.lblCreditDesc.Location = New System.Drawing.Point(6, 69)
+        Me.lblCreditDesc.Location = New System.Drawing.Point(6, 123)
         Me.lblCreditDesc.Name = "lblCreditDesc"
         Me.lblCreditDesc.Size = New System.Drawing.Size(115, 17)
         Me.lblCreditDesc.TabIndex = 109
@@ -192,14 +202,14 @@ Partial Class frmJournalSpecialTxns
         Me.cboCreditAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCreditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cboCreditAccount.FormattingEnabled = True
-        Me.cboCreditAccount.Location = New System.Drawing.Point(136, 66)
+        Me.cboCreditAccount.Location = New System.Drawing.Point(136, 120)
         Me.cboCreditAccount.Name = "cboCreditAccount"
         Me.cboCreditAccount.Size = New System.Drawing.Size(287, 21)
         Me.cboCreditAccount.TabIndex = 7
         '
         'txtDebitActDesc
         '
-        Me.txtDebitActDesc.Location = New System.Drawing.Point(765, 95)
+        Me.txtDebitActDesc.Location = New System.Drawing.Point(765, 149)
         Me.txtDebitActDesc.MaxLength = 12
         Me.txtDebitActDesc.Multiline = True
         Me.txtDebitActDesc.Name = "txtDebitActDesc"
@@ -209,7 +219,7 @@ Partial Class frmJournalSpecialTxns
         '
         'txtCreditActDesc
         '
-        Me.txtCreditActDesc.Location = New System.Drawing.Point(765, 66)
+        Me.txtCreditActDesc.Location = New System.Drawing.Point(765, 120)
         Me.txtCreditActDesc.MaxLength = 12
         Me.txtCreditActDesc.Multiline = True
         Me.txtCreditActDesc.Name = "txtCreditActDesc"
@@ -240,7 +250,7 @@ Partial Class frmJournalSpecialTxns
         'lblDrBalance
         '
         Me.lblDrBalance.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblDrBalance.Location = New System.Drawing.Point(429, 98)
+        Me.lblDrBalance.Location = New System.Drawing.Point(429, 152)
         Me.lblDrBalance.Name = "lblDrBalance"
         Me.lblDrBalance.Size = New System.Drawing.Size(117, 19)
         Me.lblDrBalance.TabIndex = 121
@@ -249,7 +259,7 @@ Partial Class frmJournalSpecialTxns
         'lblCrBalance
         '
         Me.lblCrBalance.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblCrBalance.Location = New System.Drawing.Point(429, 69)
+        Me.lblCrBalance.Location = New System.Drawing.Point(429, 123)
         Me.lblCrBalance.Name = "lblCrBalance"
         Me.lblCrBalance.Size = New System.Drawing.Size(117, 19)
         Me.lblCrBalance.TabIndex = 122
@@ -263,15 +273,15 @@ Partial Class frmJournalSpecialTxns
         Me.dgvJournal_b.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvJournal_b.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvJournal_b.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tblid_b, Me.gid_b, Me.TxnType_b, Me.TxnDate_b, Me.Narration_b, Me.DocRef_b, Me.AccountNo_b, Me.DrAmount_b, Me.CrAmount_b, Me.refgid_b})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial Narrow", 8.0!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvJournal_b.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvJournal_b.Location = New System.Drawing.Point(12, 274)
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial Narrow", 8.0!)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvJournal_b.DefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvJournal_b.Location = New System.Drawing.Point(12, 306)
         Me.dgvJournal_b.Name = "dgvJournal_b"
         Me.dgvJournal_b.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvJournal_b.RowHeadersVisible = False
@@ -302,10 +312,10 @@ Partial Class frmJournalSpecialTxns
         'TxnDate_b
         '
         Me.TxnDate_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Format = "D"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.TxnDate_b.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.Format = "D"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.TxnDate_b.DefaultCellStyle = DataGridViewCellStyle7
         Me.TxnDate_b.HeaderText = "TxnDate"
         Me.TxnDate_b.MaxInputLength = 11
         Me.TxnDate_b.Name = "TxnDate_b"
@@ -314,9 +324,9 @@ Partial Class frmJournalSpecialTxns
         'Narration_b
         '
         Me.Narration_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Narration_b.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Narration_b.DefaultCellStyle = DataGridViewCellStyle8
         Me.Narration_b.HeaderText = "Narration"
         Me.Narration_b.MaxInputLength = 255
         Me.Narration_b.MinimumWidth = 10
@@ -326,9 +336,9 @@ Partial Class frmJournalSpecialTxns
         '
         'DocRef_b
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DocRef_b.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DocRef_b.DefaultCellStyle = DataGridViewCellStyle9
         Me.DocRef_b.HeaderText = "DocRef"
         Me.DocRef_b.MinimumWidth = 100
         Me.DocRef_b.Name = "DocRef_b"
@@ -343,8 +353,8 @@ Partial Class frmJournalSpecialTxns
         'DrAmount_b
         '
         Me.DrAmount_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DrAmount_b.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DrAmount_b.DefaultCellStyle = DataGridViewCellStyle10
         Me.DrAmount_b.HeaderText = "DrAmount"
         Me.DrAmount_b.MaxInputLength = 13
         Me.DrAmount_b.Name = "DrAmount_b"
@@ -352,8 +362,8 @@ Partial Class frmJournalSpecialTxns
         'CrAmount_b
         '
         Me.CrAmount_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.CrAmount_b.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.CrAmount_b.DefaultCellStyle = DataGridViewCellStyle11
         Me.CrAmount_b.HeaderText = "CrAmount"
         Me.CrAmount_b.MaxInputLength = 13
         Me.CrAmount_b.Name = "CrAmount_b"
@@ -369,7 +379,7 @@ Partial Class frmJournalSpecialTxns
         '
         Me.btnQueryTxn.AutoSize = True
         Me.btnQueryTxn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnQueryTxn.Location = New System.Drawing.Point(143, 233)
+        Me.btnQueryTxn.Location = New System.Drawing.Point(143, 273)
         Me.btnQueryTxn.Name = "btnQueryTxn"
         Me.btnQueryTxn.Size = New System.Drawing.Size(66, 23)
         Me.btnQueryTxn.TabIndex = 124
@@ -381,7 +391,7 @@ Partial Class frmJournalSpecialTxns
         Me.lblCnt_b.BackColor = System.Drawing.Color.Black
         Me.lblCnt_b.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Bold)
         Me.lblCnt_b.ForeColor = System.Drawing.Color.White
-        Me.lblCnt_b.Location = New System.Drawing.Point(421, 241)
+        Me.lblCnt_b.Location = New System.Drawing.Point(421, 271)
         Me.lblCnt_b.Name = "lblCnt_b"
         Me.lblCnt_b.Size = New System.Drawing.Size(100, 22)
         Me.lblCnt_b.TabIndex = 136
@@ -392,7 +402,7 @@ Partial Class frmJournalSpecialTxns
         Me.lblBalance_b.BackColor = System.Drawing.Color.Black
         Me.lblBalance_b.Font = New System.Drawing.Font("Arial Narrow", 8.0!, System.Drawing.FontStyle.Bold)
         Me.lblBalance_b.ForeColor = System.Drawing.Color.White
-        Me.lblBalance_b.Location = New System.Drawing.Point(525, 241)
+        Me.lblBalance_b.Location = New System.Drawing.Point(525, 271)
         Me.lblBalance_b.Name = "lblBalance_b"
         Me.lblBalance_b.Size = New System.Drawing.Size(150, 22)
         Me.lblBalance_b.TabIndex = 135
@@ -402,7 +412,7 @@ Partial Class frmJournalSpecialTxns
         '
         Me.btnDelete.AutoSize = True
         Me.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnDelete.Location = New System.Drawing.Point(234, 233)
+        Me.btnDelete.Location = New System.Drawing.Point(234, 273)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(48, 23)
         Me.btnDelete.TabIndex = 141
@@ -420,7 +430,7 @@ Partial Class frmJournalSpecialTxns
         '
         'txtTaxAmount
         '
-        Me.txtTaxAmount.Location = New System.Drawing.Point(632, 39)
+        Me.txtTaxAmount.Location = New System.Drawing.Point(642, 39)
         Me.txtTaxAmount.MaxLength = 12
         Me.txtTaxAmount.Name = "txtTaxAmount"
         Me.txtTaxAmount.Size = New System.Drawing.Size(95, 20)
@@ -429,7 +439,7 @@ Partial Class frmJournalSpecialTxns
         'lblTaxAmt
         '
         Me.lblTaxAmt.AutoSize = True
-        Me.lblTaxAmt.Location = New System.Drawing.Point(546, 43)
+        Me.lblTaxAmt.Location = New System.Drawing.Point(556, 43)
         Me.lblTaxAmt.Name = "lblTaxAmt"
         Me.lblTaxAmt.Size = New System.Drawing.Size(64, 13)
         Me.lblTaxAmt.TabIndex = 145
@@ -439,7 +449,7 @@ Partial Class frmJournalSpecialTxns
         'btnCopy
         '
         Me.btnCopy.Font = New System.Drawing.Font("Arial Narrow", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCopy.Location = New System.Drawing.Point(135, 183)
+        Me.btnCopy.Location = New System.Drawing.Point(135, 236)
         Me.btnCopy.Name = "btnCopy"
         Me.btnCopy.Size = New System.Drawing.Size(43, 27)
         Me.btnCopy.TabIndex = 148
@@ -450,7 +460,7 @@ Partial Class frmJournalSpecialTxns
         '
         Me.cboSampleNarration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSampleNarration.FormattingEnabled = True
-        Me.cboSampleNarration.Location = New System.Drawing.Point(185, 186)
+        Me.cboSampleNarration.Location = New System.Drawing.Point(185, 239)
         Me.cboSampleNarration.Name = "cboSampleNarration"
         Me.cboSampleNarration.Size = New System.Drawing.Size(1363, 21)
         Me.cboSampleNarration.TabIndex = 147
@@ -458,7 +468,7 @@ Partial Class frmJournalSpecialTxns
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 189)
+        Me.Label4.Location = New System.Drawing.Point(17, 242)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 13)
         Me.Label4.TabIndex = 146
@@ -550,7 +560,7 @@ Partial Class frmJournalSpecialTxns
         '
         'btnLoadTDActInCrCombo
         '
-        Me.btnLoadTDActInCrCombo.Location = New System.Drawing.Point(556, 70)
+        Me.btnLoadTDActInCrCombo.Location = New System.Drawing.Point(556, 124)
         Me.btnLoadTDActInCrCombo.Name = "btnLoadTDActInCrCombo"
         Me.btnLoadTDActInCrCombo.Size = New System.Drawing.Size(134, 25)
         Me.btnLoadTDActInCrCombo.TabIndex = 158
@@ -559,17 +569,110 @@ Partial Class frmJournalSpecialTxns
         '
         'btnLoadTDActInDrCombo
         '
-        Me.btnLoadTDActInDrCombo.Location = New System.Drawing.Point(556, 95)
+        Me.btnLoadTDActInDrCombo.Location = New System.Drawing.Point(556, 149)
         Me.btnLoadTDActInDrCombo.Name = "btnLoadTDActInDrCombo"
         Me.btnLoadTDActInDrCombo.Size = New System.Drawing.Size(134, 25)
         Me.btnLoadTDActInDrCombo.TabIndex = 159
         Me.btnLoadTDActInDrCombo.Text = "Load TD In Dr Combo"
         Me.btnLoadTDActInDrCombo.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(17, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 13)
+        Me.Label3.TabIndex = 161
+        Me.Label3.Text = "Payment Mode"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cboPaymentMode
+        '
+        Me.cboPaymentMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboPaymentMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboPaymentMode.FormattingEnabled = True
+        Me.cboPaymentMode.Items.AddRange(New Object() {"CASH", "CHEQUE", "ONLINE"})
+        Me.cboPaymentMode.Location = New System.Drawing.Point(101, 16)
+        Me.cboPaymentMode.Name = "cboPaymentMode"
+        Me.cboPaymentMode.Size = New System.Drawing.Size(99, 21)
+        Me.cboPaymentMode.TabIndex = 160
+        '
+        'cboInstrumentNo
+        '
+        Me.cboInstrumentNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboInstrumentNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboInstrumentNo.FormattingEnabled = True
+        Me.cboInstrumentNo.Location = New System.Drawing.Point(334, 17)
+        Me.cboInstrumentNo.Name = "cboInstrumentNo"
+        Me.cboInstrumentNo.Size = New System.Drawing.Size(161, 21)
+        Me.cboInstrumentNo.TabIndex = 165
+        '
+        'lblInstrumentDate
+        '
+        Me.lblInstrumentDate.Location = New System.Drawing.Point(497, 20)
+        Me.lblInstrumentDate.Name = "lblInstrumentDate"
+        Me.lblInstrumentDate.Size = New System.Drawing.Size(101, 17)
+        Me.lblInstrumentDate.TabIndex = 164
+        Me.lblInstrumentDate.Text = "Instrument Date"
+        Me.lblInstrumentDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'dtpInstrumentDate
+        '
+        Me.dtpInstrumentDate.CustomFormat = "dd-MMM-yyyy"
+        Me.dtpInstrumentDate.Enabled = False
+        Me.dtpInstrumentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpInstrumentDate.Location = New System.Drawing.Point(608, 17)
+        Me.dtpInstrumentDate.Name = "dtpInstrumentDate"
+        Me.dtpInstrumentDate.Size = New System.Drawing.Size(114, 20)
+        Me.dtpInstrumentDate.TabIndex = 162
+        '
+        'lblInstrumentNo
+        '
+        Me.lblInstrumentNo.Location = New System.Drawing.Point(223, 22)
+        Me.lblInstrumentNo.Name = "lblInstrumentNo"
+        Me.lblInstrumentNo.Size = New System.Drawing.Size(107, 16)
+        Me.lblInstrumentNo.TabIndex = 163
+        Me.lblInstrumentNo.Text = "Instrument No"
+        Me.lblInstrumentNo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'cboBankName
+        '
+        Me.cboBankName.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboBankName.FormattingEnabled = True
+        Me.cboBankName.Location = New System.Drawing.Point(854, 19)
+        Me.cboBankName.Name = "cboBankName"
+        Me.cboBankName.Size = New System.Drawing.Size(162, 21)
+        Me.cboBankName.TabIndex = 167
+        '
+        'Label6
+        '
+        Me.Label6.Location = New System.Drawing.Point(768, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(81, 17)
+        Me.Label6.TabIndex = 166
+        Me.Label6.Text = "Bank Name"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'panelPaymentMode
+        '
+        Me.panelPaymentMode.Controls.Add(Me.cboInstrumentNo)
+        Me.panelPaymentMode.Controls.Add(Me.cboBankName)
+        Me.panelPaymentMode.Controls.Add(Me.cboPaymentMode)
+        Me.panelPaymentMode.Controls.Add(Me.Label6)
+        Me.panelPaymentMode.Controls.Add(Me.Label3)
+        Me.panelPaymentMode.Controls.Add(Me.lblInstrumentNo)
+        Me.panelPaymentMode.Controls.Add(Me.lblInstrumentDate)
+        Me.panelPaymentMode.Controls.Add(Me.dtpInstrumentDate)
+        Me.panelPaymentMode.Location = New System.Drawing.Point(12, 64)
+        Me.panelPaymentMode.Name = "panelPaymentMode"
+        Me.panelPaymentMode.Size = New System.Drawing.Size(1049, 50)
+        Me.panelPaymentMode.TabIndex = 168
+        '
         'frmJournalSpecialTxns
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1564, 881)
+        Me.Controls.Add(Me.panelPaymentMode)
         Me.Controls.Add(Me.btnLoadTDActInDrCombo)
         Me.Controls.Add(Me.btnLoadTDActInCrCombo)
         Me.Controls.Add(Me.txtTotFAVal)
@@ -614,6 +717,8 @@ Partial Class frmJournalSpecialTxns
         Me.Text = "Journal Special Transactions"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvJournal_b, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelPaymentMode.ResumeLayout(False)
+        Me.panelPaymentMode.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -668,4 +773,13 @@ Partial Class frmJournalSpecialTxns
     Friend WithEvents lblTolFAVal As System.Windows.Forms.Label
     Friend WithEvents btnLoadTDActInCrCombo As Button
     Friend WithEvents btnLoadTDActInDrCombo As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cboPaymentMode As ComboBox
+    Friend WithEvents cboInstrumentNo As ComboBox
+    Friend WithEvents lblInstrumentDate As Label
+    Friend WithEvents dtpInstrumentDate As DateTimePicker
+    Friend WithEvents lblInstrumentNo As Label
+    Friend WithEvents cboBankName As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents panelPaymentMode As Panel
 End Class

@@ -88,7 +88,6 @@ D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMS
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\FMSystemProject.xml
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\Interop.AcroPDFLib.dll
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\bin\x64\Release\AxInterop.AcroPDFLib.dll
-D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbprojResolveAssemblyReference.cache
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.AcroPDFLib.dll
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\Interop.ADODB.dll
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\AxInterop.AcroPDFLib.dll
@@ -162,3 +161,5 @@ D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMS
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.exe
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.xml
 D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.pdb
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystemProject.vbprojAssemblyReference.cache
+D:\MY CODES\FMSystemProject\FMSystemSolution\FMSystemProject\obj\x64\Release\FMSystem.frmCorrections.resources

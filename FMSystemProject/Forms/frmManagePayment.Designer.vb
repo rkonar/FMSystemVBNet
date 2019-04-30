@@ -22,14 +22,14 @@ Partial Class frmManagePayment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtPaymentAmount = New System.Windows.Forms.TextBox()
@@ -124,7 +124,7 @@ Partial Class frmManagePayment
         Me.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnSave.Location = New System.Drawing.Point(7, 310)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(50, 27)
+        Me.btnSave.Size = New System.Drawing.Size(42, 23)
         Me.btnSave.TabIndex = 95
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -135,7 +135,7 @@ Partial Class frmManagePayment
         Me.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnCancel.Location = New System.Drawing.Point(214, 310)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(53, 27)
+        Me.btnCancel.Size = New System.Drawing.Size(43, 23)
         Me.btnCancel.TabIndex = 94
         Me.btnCancel.Text = "Close"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -145,7 +145,7 @@ Partial Class frmManagePayment
         Me.txtPaymentAmount.Location = New System.Drawing.Point(996, 58)
         Me.txtPaymentAmount.MaxLength = 12
         Me.txtPaymentAmount.Name = "txtPaymentAmount"
-        Me.txtPaymentAmount.Size = New System.Drawing.Size(146, 22)
+        Me.txtPaymentAmount.Size = New System.Drawing.Size(146, 20)
         Me.txtPaymentAmount.TabIndex = 92
         '
         'Label7
@@ -155,7 +155,7 @@ Partial Class frmManagePayment
         Me.Label7.ForeColor = System.Drawing.Color.Blue
         Me.Label7.Location = New System.Drawing.Point(889, 61)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(129, 17)
+        Me.Label7.Size = New System.Drawing.Size(101, 13)
         Me.Label7.TabIndex = 93
         Me.Label7.Text = "Payment Amount"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -165,7 +165,7 @@ Partial Class frmManagePayment
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(46, 60)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(97, 17)
+        Me.Label5.Size = New System.Drawing.Size(74, 13)
         Me.Label5.TabIndex = 91
         Me.Label5.Text = "Payment Date"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -177,7 +177,7 @@ Partial Class frmManagePayment
         Me.dtpPaymentDate.Location = New System.Drawing.Point(126, 57)
         Me.dtpPaymentDate.Name = "dtpPaymentDate"
         Me.dtpPaymentDate.ShowUpDown = True
-        Me.dtpPaymentDate.Size = New System.Drawing.Size(106, 22)
+        Me.dtpPaymentDate.Size = New System.Drawing.Size(106, 20)
         Me.dtpPaymentDate.TabIndex = 88
         '
         'Label2
@@ -185,7 +185,7 @@ Partial Class frmManagePayment
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(70, 220)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 17)
+        Me.Label2.Size = New System.Drawing.Size(50, 13)
         Me.Label2.TabIndex = 90
         Me.Label2.Text = "Narration"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -205,7 +205,7 @@ Partial Class frmManagePayment
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(266, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 17)
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
         Me.Label1.TabIndex = 97
         Me.Label1.Text = "Type"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -217,7 +217,7 @@ Partial Class frmManagePayment
         Me.cboExpenseType.FormattingEnabled = True
         Me.cboExpenseType.Location = New System.Drawing.Point(297, 56)
         Me.cboExpenseType.Name = "cboExpenseType"
-        Me.cboExpenseType.Size = New System.Drawing.Size(157, 24)
+        Me.cboExpenseType.Size = New System.Drawing.Size(157, 21)
         Me.cboExpenseType.TabIndex = 96
         '
         'lblInstrumentDate
@@ -236,7 +236,7 @@ Partial Class frmManagePayment
         Me.dtpInstrumentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpInstrumentDate.Location = New System.Drawing.Point(399, 175)
         Me.dtpInstrumentDate.Name = "dtpInstrumentDate"
-        Me.dtpInstrumentDate.Size = New System.Drawing.Size(114, 22)
+        Me.dtpInstrumentDate.Size = New System.Drawing.Size(114, 20)
         Me.dtpInstrumentDate.TabIndex = 101
         '
         'Label6
@@ -262,7 +262,7 @@ Partial Class frmManagePayment
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(463, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 17)
+        Me.Label3.Size = New System.Drawing.Size(78, 13)
         Me.Label3.TabIndex = 102
         Me.Label3.Text = "Payment Mode"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -276,7 +276,7 @@ Partial Class frmManagePayment
         Me.cboPaymentMode.Items.AddRange(New Object() {"CASH", "CHEQUE", "ONLINE"})
         Me.cboPaymentMode.Location = New System.Drawing.Point(547, 57)
         Me.cboPaymentMode.Name = "cboPaymentMode"
-        Me.cboPaymentMode.Size = New System.Drawing.Size(133, 24)
+        Me.cboPaymentMode.Size = New System.Drawing.Size(133, 21)
         Me.cboPaymentMode.TabIndex = 98
         '
         'lblDebitDesc
@@ -295,7 +295,7 @@ Partial Class frmManagePayment
         Me.cboDebitAccount.FormattingEnabled = True
         Me.cboDebitAccount.Location = New System.Drawing.Point(124, 93)
         Me.cboDebitAccount.Name = "cboDebitAccount"
-        Me.cboDebitAccount.Size = New System.Drawing.Size(328, 24)
+        Me.cboDebitAccount.Size = New System.Drawing.Size(328, 21)
         Me.cboDebitAccount.TabIndex = 106
         '
         'lblCreditDesc
@@ -314,7 +314,7 @@ Partial Class frmManagePayment
         Me.cboCreditAccount.FormattingEnabled = True
         Me.cboCreditAccount.Location = New System.Drawing.Point(124, 122)
         Me.cboCreditAccount.Name = "cboCreditAccount"
-        Me.cboCreditAccount.Size = New System.Drawing.Size(328, 24)
+        Me.cboCreditAccount.Size = New System.Drawing.Size(328, 21)
         Me.cboCreditAccount.TabIndex = 108
         '
         'grpExpenseSubType
@@ -334,7 +334,7 @@ Partial Class frmManagePayment
         Me.optCapExp.AutoSize = True
         Me.optCapExp.Location = New System.Drawing.Point(11, 57)
         Me.optCapExp.Name = "optCapExp"
-        Me.optCapExp.Size = New System.Drawing.Size(130, 21)
+        Me.optCapExp.Size = New System.Drawing.Size(101, 17)
         Me.optCapExp.TabIndex = 1
         Me.optCapExp.Text = "Capital Expense"
         Me.optCapExp.UseVisualStyleBackColor = True
@@ -345,7 +345,7 @@ Partial Class frmManagePayment
         Me.optCurExp.Checked = True
         Me.optCurExp.Location = New System.Drawing.Point(9, 21)
         Me.optCurExp.Name = "optCurExp"
-        Me.optCurExp.Size = New System.Drawing.Size(134, 21)
+        Me.optCurExp.Size = New System.Drawing.Size(103, 17)
         Me.optCurExp.TabIndex = 0
         Me.optCurExp.TabStop = True
         Me.optCurExp.Text = "Current Expense"
@@ -377,7 +377,7 @@ Partial Class frmManagePayment
         Me.cboBankName.FormattingEnabled = True
         Me.cboBankName.Location = New System.Drawing.Point(606, 177)
         Me.cboBankName.Name = "cboBankName"
-        Me.cboBankName.Size = New System.Drawing.Size(162, 24)
+        Me.cboBankName.Size = New System.Drawing.Size(162, 21)
         Me.cboBankName.TabIndex = 113
         '
         'GroupBox1
@@ -407,7 +407,7 @@ Partial Class frmManagePayment
         Me.cboChequeNo.FormattingEnabled = True
         Me.cboChequeNo.Location = New System.Drawing.Point(8, 23)
         Me.cboChequeNo.Name = "cboChequeNo"
-        Me.cboChequeNo.Size = New System.Drawing.Size(157, 24)
+        Me.cboChequeNo.Size = New System.Drawing.Size(157, 21)
         Me.cboChequeNo.Sorted = True
         Me.cboChequeNo.TabIndex = 116
         '
@@ -444,7 +444,7 @@ Partial Class frmManagePayment
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(30, 252)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 17)
+        Me.Label4.Size = New System.Drawing.Size(88, 13)
         Me.Label4.TabIndex = 126
         Me.Label4.Text = "Sample Narration"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -455,7 +455,7 @@ Partial Class frmManagePayment
         Me.cboSampleNarration.FormattingEnabled = True
         Me.cboSampleNarration.Location = New System.Drawing.Point(173, 249)
         Me.cboSampleNarration.Name = "cboSampleNarration"
-        Me.cboSampleNarration.Size = New System.Drawing.Size(1388, 24)
+        Me.cboSampleNarration.Size = New System.Drawing.Size(1388, 21)
         Me.cboSampleNarration.TabIndex = 127
         '
         'btnCopy
@@ -496,7 +496,7 @@ Partial Class frmManagePayment
         Me.btnQueryExpense.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnQueryExpense.Location = New System.Drawing.Point(114, 310)
         Me.btnQueryExpense.Name = "btnQueryExpense"
-        Me.btnQueryExpense.Size = New System.Drawing.Size(57, 27)
+        Me.btnQueryExpense.Size = New System.Drawing.Size(45, 23)
         Me.btnQueryExpense.TabIndex = 138
         Me.btnQueryExpense.Text = "Query"
         Me.btnQueryExpense.UseVisualStyleBackColor = True
@@ -509,14 +509,14 @@ Partial Class frmManagePayment
         Me.dgvJournal_b.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvJournal_b.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvJournal_b.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tblid_b, Me.gid_b, Me.TxnType_b, Me.TxnDate_b, Me.Narration_b, Me.DocRef_b, Me.DrAccountNo_b, Me.CrAccountNo_b, Me.DrAmount_b, Me.CrAmount_b, Me.VoucherNo, Me.Status, Me.SupervisorName, Me.ApprovedBy, Me.ApprovedDate})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial Narrow", 8.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvJournal_b.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Arial Narrow", 8.0!)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvJournal_b.DefaultCellStyle = DataGridViewCellStyle16
         Me.dgvJournal_b.Location = New System.Drawing.Point(5, 341)
         Me.dgvJournal_b.Name = "dgvJournal_b"
         Me.dgvJournal_b.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -548,10 +548,10 @@ Partial Class frmManagePayment
         'TxnDate_b
         '
         Me.TxnDate_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Format = "D"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.TxnDate_b.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Format = "D"
+        DataGridViewCellStyle9.NullValue = Nothing
+        Me.TxnDate_b.DefaultCellStyle = DataGridViewCellStyle9
         Me.TxnDate_b.HeaderText = "TxnDate"
         Me.TxnDate_b.MaxInputLength = 11
         Me.TxnDate_b.Name = "TxnDate_b"
@@ -560,9 +560,9 @@ Partial Class frmManagePayment
         'Narration_b
         '
         Me.Narration_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Narration_b.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Narration_b.DefaultCellStyle = DataGridViewCellStyle10
         Me.Narration_b.HeaderText = "Narration"
         Me.Narration_b.MaxInputLength = 255
         Me.Narration_b.MinimumWidth = 10
@@ -572,9 +572,9 @@ Partial Class frmManagePayment
         '
         'DocRef_b
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DocRef_b.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DocRef_b.DefaultCellStyle = DataGridViewCellStyle11
         Me.DocRef_b.HeaderText = "DocRef"
         Me.DocRef_b.MinimumWidth = 100
         Me.DocRef_b.Name = "DocRef_b"
@@ -583,9 +583,9 @@ Partial Class frmManagePayment
         'DrAccountNo_b
         '
         Me.DrAccountNo_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DrAccountNo_b.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DrAccountNo_b.DefaultCellStyle = DataGridViewCellStyle12
         Me.DrAccountNo_b.HeaderText = "DrAccountNo"
         Me.DrAccountNo_b.MaxInputLength = 255
         Me.DrAccountNo_b.Name = "DrAccountNo_b"
@@ -594,9 +594,9 @@ Partial Class frmManagePayment
         'CrAccountNo_b
         '
         Me.CrAccountNo_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CrAccountNo_b.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CrAccountNo_b.DefaultCellStyle = DataGridViewCellStyle13
         Me.CrAccountNo_b.HeaderText = "CrAccountNo"
         Me.CrAccountNo_b.MaxInputLength = 255
         Me.CrAccountNo_b.Name = "CrAccountNo_b"
@@ -605,8 +605,8 @@ Partial Class frmManagePayment
         'DrAmount_b
         '
         Me.DrAmount_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DrAmount_b.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DrAmount_b.DefaultCellStyle = DataGridViewCellStyle14
         Me.DrAmount_b.HeaderText = "DrAmount"
         Me.DrAmount_b.MaxInputLength = 13
         Me.DrAmount_b.Name = "DrAmount_b"
@@ -614,8 +614,8 @@ Partial Class frmManagePayment
         'CrAmount_b
         '
         Me.CrAmount_b.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.CrAmount_b.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.CrAmount_b.DefaultCellStyle = DataGridViewCellStyle15
         Me.CrAmount_b.HeaderText = "CrAmount"
         Me.CrAmount_b.MaxInputLength = 13
         Me.CrAmount_b.Name = "CrAmount_b"
@@ -656,7 +656,7 @@ Partial Class frmManagePayment
         Me.btnReset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnReset.Location = New System.Drawing.Point(164, 310)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(55, 27)
+        Me.btnReset.Size = New System.Drawing.Size(45, 23)
         Me.btnReset.TabIndex = 141
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
@@ -668,7 +668,7 @@ Partial Class frmManagePayment
         Me.cboInstrumentNo.FormattingEnabled = True
         Me.cboInstrumentNo.Location = New System.Drawing.Point(126, 175)
         Me.cboInstrumentNo.Name = "cboInstrumentNo"
-        Me.cboInstrumentNo.Size = New System.Drawing.Size(161, 24)
+        Me.cboInstrumentNo.Size = New System.Drawing.Size(161, 21)
         Me.cboInstrumentNo.TabIndex = 149
         '
         'grpExpenseType
@@ -691,7 +691,7 @@ Partial Class frmManagePayment
         Me.optDeferredPayment.AutoSize = True
         Me.optDeferredPayment.Location = New System.Drawing.Point(944, 14)
         Me.optDeferredPayment.Name = "optDeferredPayment"
-        Me.optDeferredPayment.Size = New System.Drawing.Size(144, 21)
+        Me.optDeferredPayment.Size = New System.Drawing.Size(110, 17)
         Me.optDeferredPayment.TabIndex = 7
         Me.optDeferredPayment.Text = "Deferred Payment"
         Me.optDeferredPayment.UseVisualStyleBackColor = True
@@ -701,7 +701,7 @@ Partial Class frmManagePayment
         Me.optProvision.AutoSize = True
         Me.optProvision.Location = New System.Drawing.Point(808, 14)
         Me.optProvision.Name = "optProvision"
-        Me.optProvision.Size = New System.Drawing.Size(87, 21)
+        Me.optProvision.Size = New System.Drawing.Size(68, 17)
         Me.optProvision.TabIndex = 6
         Me.optProvision.Text = "Provision"
         Me.optProvision.UseVisualStyleBackColor = True
@@ -711,7 +711,7 @@ Partial Class frmManagePayment
         Me.optAdjustPrepaid.AutoSize = True
         Me.optAdjustPrepaid.Location = New System.Drawing.Point(588, 14)
         Me.optAdjustPrepaid.Name = "optAdjustPrepaid"
-        Me.optAdjustPrepaid.Size = New System.Drawing.Size(171, 21)
+        Me.optAdjustPrepaid.Size = New System.Drawing.Size(130, 17)
         Me.optAdjustPrepaid.TabIndex = 5
         Me.optAdjustPrepaid.Text = "Adjust against Prepaid"
         Me.optAdjustPrepaid.UseVisualStyleBackColor = True
@@ -721,7 +721,7 @@ Partial Class frmManagePayment
         Me.optPrepaid.AutoSize = True
         Me.optPrepaid.Location = New System.Drawing.Point(403, 14)
         Me.optPrepaid.Name = "optPrepaid"
-        Me.optPrepaid.Size = New System.Drawing.Size(136, 21)
+        Me.optPrepaid.Size = New System.Drawing.Size(105, 17)
         Me.optPrepaid.TabIndex = 4
         Me.optPrepaid.Text = "Prepaid Expense"
         Me.optPrepaid.UseVisualStyleBackColor = True
@@ -731,7 +731,7 @@ Partial Class frmManagePayment
         Me.optFixedAsset.AutoSize = True
         Me.optFixedAsset.Location = New System.Drawing.Point(189, 14)
         Me.optFixedAsset.Name = "optFixedAsset"
-        Me.optFixedAsset.Size = New System.Drawing.Size(165, 21)
+        Me.optFixedAsset.Size = New System.Drawing.Size(127, 17)
         Me.optFixedAsset.TabIndex = 3
         Me.optFixedAsset.Text = "Fixed Asset Purchase"
         Me.optFixedAsset.UseVisualStyleBackColor = True
@@ -742,7 +742,7 @@ Partial Class frmManagePayment
         Me.optNormalExpense.Checked = True
         Me.optNormalExpense.Location = New System.Drawing.Point(8, 14)
         Me.optNormalExpense.Name = "optNormalExpense"
-        Me.optNormalExpense.Size = New System.Drawing.Size(132, 21)
+        Me.optNormalExpense.Size = New System.Drawing.Size(102, 17)
         Me.optNormalExpense.TabIndex = 1
         Me.optNormalExpense.TabStop = True
         Me.optNormalExpense.Text = "Normal Expense"
@@ -763,7 +763,7 @@ Partial Class frmManagePayment
         Me.btnChangeDebitSide.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnChangeDebitSide.Location = New System.Drawing.Point(1418, 314)
         Me.btnChangeDebitSide.Name = "btnChangeDebitSide"
-        Me.btnChangeDebitSide.Size = New System.Drawing.Size(184, 27)
+        Me.btnChangeDebitSide.Size = New System.Drawing.Size(142, 23)
         Me.btnChangeDebitSide.TabIndex = 152
         Me.btnChangeDebitSide.Text = "Enable Debit Side Change"
         Me.btnChangeDebitSide.UseVisualStyleBackColor = True
@@ -774,7 +774,7 @@ Partial Class frmManagePayment
         Me.btnUpdateDebitSide.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnUpdateDebitSide.Location = New System.Drawing.Point(1313, 314)
         Me.btnUpdateDebitSide.Name = "btnUpdateDebitSide"
-        Me.btnUpdateDebitSide.Size = New System.Drawing.Size(129, 27)
+        Me.btnUpdateDebitSide.Size = New System.Drawing.Size(101, 23)
         Me.btnUpdateDebitSide.TabIndex = 153
         Me.btnUpdateDebitSide.Text = "Update DebitSide"
         Me.btnUpdateDebitSide.UseVisualStyleBackColor = True
@@ -786,7 +786,7 @@ Partial Class frmManagePayment
         Me.Label8.ForeColor = System.Drawing.Color.Blue
         Me.Label8.Location = New System.Drawing.Point(688, 62)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 17)
+        Me.Label8.Size = New System.Drawing.Size(74, 13)
         Me.Label8.TabIndex = 155
         Me.Label8.Text = "Voucher No"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -797,7 +797,7 @@ Partial Class frmManagePayment
         Me.btnUpdateVoucherNo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnUpdateVoucherNo.Location = New System.Drawing.Point(1334, 285)
         Me.btnUpdateVoucherNo.Name = "btnUpdateVoucherNo"
-        Me.btnUpdateVoucherNo.Size = New System.Drawing.Size(87, 27)
+        Me.btnUpdateVoucherNo.Size = New System.Drawing.Size(70, 23)
         Me.btnUpdateVoucherNo.TabIndex = 156
         Me.btnUpdateVoucherNo.Text = "Update VN"
         Me.btnUpdateVoucherNo.UseVisualStyleBackColor = True
@@ -810,7 +810,7 @@ Partial Class frmManagePayment
         Me.cboVoucherNo.Items.AddRange(New Object() {"CASH", "CHEQUE", "ONLINE"})
         Me.cboVoucherNo.Location = New System.Drawing.Point(768, 58)
         Me.cboVoucherNo.Name = "cboVoucherNo"
-        Me.cboVoucherNo.Size = New System.Drawing.Size(113, 24)
+        Me.cboVoucherNo.Size = New System.Drawing.Size(113, 21)
         Me.cboVoucherNo.TabIndex = 159
         '
         'lblGID
@@ -831,7 +831,7 @@ Partial Class frmManagePayment
         Me.btnEnableVoucherNoUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnEnableVoucherNoUpdate.Location = New System.Drawing.Point(1410, 285)
         Me.btnEnableVoucherNoUpdate.Name = "btnEnableVoucherNoUpdate"
-        Me.btnEnableVoucherNoUpdate.Size = New System.Drawing.Size(196, 27)
+        Me.btnEnableVoucherNoUpdate.Size = New System.Drawing.Size(151, 23)
         Me.btnEnableVoucherNoUpdate.TabIndex = 158
         Me.btnEnableVoucherNoUpdate.Text = "Enable Voucher No Addition"
         Me.btnEnableVoucherNoUpdate.UseVisualStyleBackColor = True
@@ -845,7 +845,7 @@ Partial Class frmManagePayment
         Me.btnApprove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnApprove.Location = New System.Drawing.Point(506, 310)
         Me.btnApprove.Name = "btnApprove"
-        Me.btnApprove.Size = New System.Drawing.Size(91, 27)
+        Me.btnApprove.Size = New System.Drawing.Size(75, 23)
         Me.btnApprove.TabIndex = 159
         Me.btnApprove.Text = "APPROVE"
         Me.btnApprove.UseVisualStyleBackColor = False
@@ -881,7 +881,7 @@ Partial Class frmManagePayment
         Me.btnReject.ForeColor = System.Drawing.Color.Red
         Me.btnReject.Location = New System.Drawing.Point(587, 310)
         Me.btnReject.Name = "btnReject"
-        Me.btnReject.Size = New System.Drawing.Size(77, 27)
+        Me.btnReject.Size = New System.Drawing.Size(64, 23)
         Me.btnReject.TabIndex = 162
         Me.btnReject.Text = "REJECT"
         Me.btnReject.UseVisualStyleBackColor = False
@@ -892,7 +892,7 @@ Partial Class frmManagePayment
         Me.btnShowAllPending.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnShowAllPending.Location = New System.Drawing.Point(263, 310)
         Me.btnShowAllPending.Name = "btnShowAllPending"
-        Me.btnShowAllPending.Size = New System.Drawing.Size(126, 27)
+        Me.btnShowAllPending.Size = New System.Drawing.Size(99, 23)
         Me.btnShowAllPending.TabIndex = 163
         Me.btnShowAllPending.Text = "Show all Pending"
         Me.btnShowAllPending.UseVisualStyleBackColor = True
@@ -905,7 +905,7 @@ Partial Class frmManagePayment
         Me.cboApprovers.Items.AddRange(New Object() {"CASH", "CHEQUE", "ONLINE"})
         Me.cboApprovers.Location = New System.Drawing.Point(857, 175)
         Me.cboApprovers.Name = "cboApprovers"
-        Me.cboApprovers.Size = New System.Drawing.Size(178, 24)
+        Me.cboApprovers.Size = New System.Drawing.Size(178, 21)
         Me.cboApprovers.TabIndex = 164
         '
         'btnEmailApprover
@@ -924,7 +924,7 @@ Partial Class frmManagePayment
         Me.btnShowMoreInGrid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnShowMoreInGrid.Location = New System.Drawing.Point(1166, 310)
         Me.btnShowMoreInGrid.Name = "btnShowMoreInGrid"
-        Me.btnShowMoreInGrid.Size = New System.Drawing.Size(88, 27)
+        Me.btnShowMoreInGrid.Size = New System.Drawing.Size(71, 23)
         Me.btnShowMoreInGrid.TabIndex = 166
         Me.btnShowMoreInGrid.Text = "Show More"
         Me.btnShowMoreInGrid.UseVisualStyleBackColor = True
@@ -934,7 +934,7 @@ Partial Class frmManagePayment
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(776, 180)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(99, 17)
+        Me.Label9.Size = New System.Drawing.Size(75, 13)
         Me.Label9.TabIndex = 168
         Me.Label9.Text = "Supervised By"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -945,7 +945,7 @@ Partial Class frmManagePayment
         Me.btnUpdatePayment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnUpdatePayment.Location = New System.Drawing.Point(56, 310)
         Me.btnUpdatePayment.Name = "btnUpdatePayment"
-        Me.btnUpdatePayment.Size = New System.Drawing.Size(64, 27)
+        Me.btnUpdatePayment.Size = New System.Drawing.Size(52, 23)
         Me.btnUpdatePayment.TabIndex = 169
         Me.btnUpdatePayment.Text = "Update"
         Me.btnUpdatePayment.UseVisualStyleBackColor = True
@@ -956,7 +956,7 @@ Partial Class frmManagePayment
         Me.btnShowPendingWithMe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnShowPendingWithMe.Location = New System.Drawing.Point(368, 310)
         Me.btnShowPendingWithMe.Name = "btnShowPendingWithMe"
-        Me.btnShowPendingWithMe.Size = New System.Drawing.Size(121, 27)
+        Me.btnShowPendingWithMe.Size = New System.Drawing.Size(96, 23)
         Me.btnShowPendingWithMe.TabIndex = 170
         Me.btnShowPendingWithMe.Text = "Pending with Me"
         Me.btnShowPendingWithMe.UseVisualStyleBackColor = True
